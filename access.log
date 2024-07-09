@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.6.4)  8 JUL 2024 23:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.6.4)  9 JUL 2024 22:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -400,10 +400,31 @@ Overfull \hbox (9.2679pt too wide) in paragraph at lines 57--57
 []  
  []
 
-<logo.png, id=4, 206.27063pt x 53.44969pt>
+
+Underfull \vbox (badness 3108) has occurred while \output is active []
+
+<figures/fig2.png, id=4, 1189.44376pt x 251.43938pt>
+File: figures/fig2.png Graphic file (type png)
+<use figures/fig2.png>
+Package pdftex.def Info: figures/fig2.png  used on input line 86.
+(pdftex.def)             Requested size: 505.12177pt x 106.77782pt.
+File: figures/fig2.png Graphic file (type png)
+<use figures/fig2.png>
+Package pdftex.def Info: figures/fig2.png  used on input line 86.
+(pdftex.def)             Requested size: 505.12177pt x 106.77782pt.
+<figures/fig5.png, id=6, 1134.48843pt x 660.96938pt>
+File: figures/fig5.png Graphic file (type png)
+<use figures/fig5.png>
+Package pdftex.def Info: figures/fig5.png  used on input line 91.
+(pdftex.def)             Requested size: 505.12177pt x 294.28677pt.
+File: figures/fig5.png Graphic file (type png)
+<use figures/fig5.png>
+Package pdftex.def Info: figures/fig5.png  used on input line 91.
+(pdftex.def)             Requested size: 505.12177pt x 294.28677pt.
+<logo.png, id=7, 206.27063pt x 53.44969pt>
 File: logo.png Graphic file (type png)
 <use logo.png>
-Package pdftex.def Info: logo.png  used on input line 99.
+Package pdftex.def Info: logo.png  used on input line 91.
 (pdftex.def)             Requested size: 91.32pt x 23.66309pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -429,137 +450,119 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 
  <./logo.png> <./bullet.png>]
-<figures/fig2.png, id=24, 1189.44376pt x 251.43938pt>
-File: figures/fig2.png Graphic file (type png)
-<use figures/fig2.png>
-Package pdftex.def Info: figures/fig2.png  used on input line 103.
-(pdftex.def)             Requested size: 505.12177pt x 106.77782pt.
-File: figures/fig2.png Graphic file (type png)
-<use figures/fig2.png>
-Package pdftex.def Info: figures/fig2.png  used on input line 103.
-(pdftex.def)             Requested size: 505.12177pt x 106.77782pt.
-<figures/fig5.png, id=26, 1134.48843pt x 660.96938pt>
-File: figures/fig5.png Graphic file (type png)
-<use figures/fig5.png>
-Package pdftex.def Info: figures/fig5.png  used on input line 108.
-(pdftex.def)             Requested size: 505.12177pt x 294.28677pt.
-File: figures/fig5.png Graphic file (type png)
-<use figures/fig5.png>
-Package pdftex.def Info: figures/fig5.png  used on input line 108.
-(pdftex.def)             Requested size: 505.12177pt x 294.28677pt.
-<figures/fig6.png, id=27, 944.02687pt x 671.50874pt>
+<figures/fig6.png, id=21, 944.02687pt x 671.50874pt>
 File: figures/fig6.png Graphic file (type png)
 <use figures/fig6.png>
-Package pdftex.def Info: figures/fig6.png  used on input line 113.
+Package pdftex.def Info: figures/fig6.png  used on input line 96.
 (pdftex.def)             Requested size: 377.60405pt x 268.59874pt.
 File: figures/fig6.png Graphic file (type png)
 <use figures/fig6.png>
-Package pdftex.def Info: figures/fig6.png  used on input line 113.
+Package pdftex.def Info: figures/fig6.png  used on input line 96.
 (pdftex.def)             Requested size: 377.60405pt x 268.59874pt.
-<figures/fig9.png, id=28, 819.8128pt x 633.86812pt>
+<figures/fig9.png, id=22, 819.8128pt x 633.86812pt>
 File: figures/fig9.png Graphic file (type png)
 <use figures/fig9.png>
-Package pdftex.def Info: figures/fig9.png  used on input line 119.
+Package pdftex.def Info: figures/fig9.png  used on input line 102.
 (pdftex.def)             Requested size: 505.12177pt x 390.5665pt.
 File: figures/fig9.png Graphic file (type png)
 <use figures/fig9.png>
-Package pdftex.def Info: figures/fig9.png  used on input line 119.
+Package pdftex.def Info: figures/fig9.png  used on input line 102.
 (pdftex.def)             Requested size: 505.12177pt x 390.5665pt.
-<figures/fig13.png, id=29, 1078.78032pt x 587.19376pt>
+<figures/fig13.png, id=23, 1078.78032pt x 587.19376pt>
 File: figures/fig13.png Graphic file (type png)
 <use figures/fig13.png>
-Package pdftex.def Info: figures/fig13.png  used on input line 123.
+Package pdftex.def Info: figures/fig13.png  used on input line 106.
 (pdftex.def)             Requested size: 505.12177pt x 274.95071pt.
 File: figures/fig13.png Graphic file (type png)
 <use figures/fig13.png>
-Package pdftex.def Info: figures/fig13.png  used on input line 123.
+Package pdftex.def Info: figures/fig13.png  used on input line 106.
 (pdftex.def)             Requested size: 505.12177pt x 274.95071pt.
-<figures/fig30.png, id=30, 751.30687pt x 657.95813pt>
+<figures/fig30.png, id=24, 751.30687pt x 657.95813pt>
 File: figures/fig30.png Graphic file (type png)
 <use figures/fig30.png>
-Package pdftex.def Info: figures/fig30.png  used on input line 131.
+Package pdftex.def Info: figures/fig30.png  used on input line 114.
 (pdftex.def)             Requested size: 505.12177pt x 442.36572pt.
 File: figures/fig30.png Graphic file (type png)
 <use figures/fig30.png>
-Package pdftex.def Info: figures/fig30.png  used on input line 131.
+Package pdftex.def Info: figures/fig30.png  used on input line 114.
 (pdftex.def)             Requested size: 505.12177pt x 442.36572pt.
-<figures/fig15.png, id=31, 956.07187pt x 394.85016pt>
+<figures/fig15.png, id=25, 956.07187pt x 394.85016pt>
 File: figures/fig15.png Graphic file (type png)
 <use figures/fig15.png>
-Package pdftex.def Info: figures/fig15.png  used on input line 141.
+Package pdftex.def Info: figures/fig15.png  used on input line 124.
 (pdftex.def)             Requested size: 505.12177pt x 208.60684pt.
 File: figures/fig15.png Graphic file (type png)
 <use figures/fig15.png>
-Package pdftex.def Info: figures/fig15.png  used on input line 141.
+Package pdftex.def Info: figures/fig15.png  used on input line 124.
 (pdftex.def)             Requested size: 505.12177pt x 208.60684pt.
-<figures/fig17.png, id=32, 828.09375pt x 606.01407pt>
+<figures/fig17.png, id=26, 828.09375pt x 606.01407pt>
 File: figures/fig17.png Graphic file (type png)
 <use figures/fig17.png>
-Package pdftex.def Info: figures/fig17.png  used on input line 146.
+Package pdftex.def Info: figures/fig17.png  used on input line 129.
 (pdftex.def)             Requested size: 414.04587pt x 303.00629pt.
 File: figures/fig17.png Graphic file (type png)
 <use figures/fig17.png>
-Package pdftex.def Info: figures/fig17.png  used on input line 146.
+Package pdftex.def Info: figures/fig17.png  used on input line 129.
 (pdftex.def)             Requested size: 414.04587pt x 303.00629pt.
-<figures/fig18.png, id=33, 747.54282pt x 602.25pt>
+<figures/fig18.png, id=27, 673.01437pt x 552.56438pt>
 File: figures/fig18.png Graphic file (type png)
 <use figures/fig18.png>
-Package pdftex.def Info: figures/fig18.png  used on input line 149.
-(pdftex.def)             Requested size: 239.21858pt x 192.72392pt.
+Package pdftex.def Info: figures/fig18.png  used on input line 132.
+(pdftex.def)             Requested size: 215.36899pt x 176.8242pt.
 File: figures/fig18.png Graphic file (type png)
 <use figures/fig18.png>
-Package pdftex.def Info: figures/fig18.png  used on input line 149.
-(pdftex.def)             Requested size: 239.21858pt x 192.72392pt.
-<figures/fig19.png, id=34, 726.08766pt x 585.31172pt>
+Package pdftex.def Info: figures/fig18.png  used on input line 132.
+(pdftex.def)             Requested size: 215.36899pt x 176.8242pt.
+<figures/fig19.png, id=28, 803.25093pt x 630.85687pt>
 File: figures/fig19.png Graphic file (type png)
 <use figures/fig19.png>
-Package pdftex.def Info: figures/fig19.png  used on input line 152.
-(pdftex.def)             Requested size: 239.60966pt x 193.15346pt.
+Package pdftex.def Info: figures/fig19.png  used on input line 135.
+(pdftex.def)             Requested size: 240.97713pt x 189.25851pt.
 File: figures/fig19.png Graphic file (type png)
 <use figures/fig19.png>
-Package pdftex.def Info: figures/fig19.png  used on input line 152.
-(pdftex.def)             Requested size: 239.60966pt x 193.15346pt.
-<figures/fig20.png, id=35, 1139.75812pt x 516.42938pt>
+Package pdftex.def Info: figures/fig19.png  used on input line 135.
+(pdftex.def)             Requested size: 240.97713pt x 189.25851pt.
+<figures/fig20.png, id=29, 1139.75812pt x 516.42938pt>
 File: figures/fig20.png Graphic file (type png)
 <use figures/fig20.png>
-Package pdftex.def Info: figures/fig20.png  used on input line 155.
+Package pdftex.def Info: figures/fig20.png  used on input line 138.
 (pdftex.def)             Requested size: 505.12177pt x 228.86868pt.
 File: figures/fig20.png Graphic file (type png)
 <use figures/fig20.png>
-Package pdftex.def Info: figures/fig20.png  used on input line 155.
+Package pdftex.def Info: figures/fig20.png  used on input line 138.
 (pdftex.def)             Requested size: 505.12177pt x 228.86868pt.
 
-Underfull \hbox (badness 3302) in paragraph at lines 166--168
+Underfull \hbox (badness 3302) in paragraph at lines 149--151
 \T1/times/n/n/10 com-mand be-low. If you have only one ap-pendix, use
  []
 
 
-LaTeX Warning: Reference `table' on page 2 undefined on input line 176.
+LaTeX Warning: Reference `table' on page 2 undefined on input line 159.
 
-LaTeX Font Info:    Calculating math sizes for size <7.61> on input line 200.
+LaTeX Font Info:    Calculating math sizes for size <7.61> on input line 183.
 
-Underfull \hbox (badness 5578) in paragraph at lines 202--203
+Underfull \hbox (badness 5578) in paragraph at lines 185--186
 []\T1/times/n/n/7.61 W.-K. Chen, \T1/times/n/it/7.61 Lin-ear Net-works and Sys-tems. \T1/times/n/n/7.61 Bel-mont, CA, USA:
  []
 
 
-Underfull \hbox (badness 2951) in paragraph at lines 218--223
+Underfull \hbox (badness 2951) in paragraph at lines 201--206
 []\T1/times/n/n/7.61 G. O. Young, ``Syn-thetic struc-ture of in-dus-trial plas-tics,'' in Plas-
  []
 
 
-Underfull \hbox (badness 1968) in paragraph at lines 224--227
+Underfull \hbox (badness 1968) in paragraph at lines 207--210
 \T1/times/n/n/7.61 Chicago, IL, USA: Univ. Chicago Press, 1987. [On-line]. Avail-able:
  []
 
-<notaglinelogo.png, id=36, 169.38281pt x 42.91031pt>
+<notaglinelogo.png, id=30, 169.38281pt x 42.91031pt>
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 242.
+Package pdftex.def Info: notaglinelogo.png  used on input line 210.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 LaTeX Font Warning: Font shape `T1/formata/m/sl' undefined
-(Font)              using `T1/formata/m/it' instead on input line 242.
+(Font)              using `T1/formata/m/it' instead on input line 210.
 
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -576,85 +579,68 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[2 <./notaglinelogo.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 243--247
+[2 <./notaglinelogo.png> <./figures/fig2.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+LaTeX Font Warning: Font shape `T1/formata/m/sl' undefined
+(Font)              using `T1/formata/m/it' instead on input line 214.
+
+File: notaglinelogo.png Graphic file (type png)
+<use notaglinelogo.png>
+Package pdftex.def Info: notaglinelogo.png  used on input line 214.
+(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[3 <./figures/fig5.png> <./figures/fig6.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 226--230
 []\T1/times/m/n/7.61 PROCESS Cor-po-ra-tion, Boston, MA, USA. In-tranets: In-ter-net
  []
 
 
-Underfull \hbox (badness 1371) in paragraph at lines 243--247
+Underfull \hbox (badness 1371) in paragraph at lines 226--230
 \T1/times/m/n/7.61 tech-nolo-gies de-ployed be-hind the fire-wall for cor-po-rate pro-duc-tiv-ity.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--247
+Underfull \hbox (badness 10000) in paragraph at lines 226--230
 \T1/times/m/n/7.61 Pre-sented at INET96 An-nual Meet-ing. [On-line]. Avail-able:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 250--253
+Underfull \hbox (badness 10000) in paragraph at lines 233--236
 []\T1/times/m/n/7.61 Teralyzer. Lytera UG, Kirch-hain, Ger-many [On-line]. Avail-able:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 250--253
+Underfull \hbox (badness 10000) in paragraph at lines 233--236
 []$\T1/times/m/n/7.61 ,
  []
 
-
-Underfull \vbox (badness 1629) has occurred while \output is active []
-
-
-
-LaTeX Font Warning: Font shape `T1/formata/m/sl' undefined
-(Font)              using `T1/formata/m/it' instead on input line 281.
-
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 281.
+Package pdftex.def Info: notaglinelogo.png  used on input line 265.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
-
-Overfull \hbox (505.12177pt too wide) has occurred while \output is active
-[]
- []
-
-
-Overfull \hbox (505.12177pt too wide) has occurred while \output is active
-[]
- []
-
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-[3 <./figures/fig2.png> <./figures/fig5.png>]
-<author1.png, id=46, 225.84375pt x 282.30469pt>
-File: author1.png Graphic file (type png)
-<use author1.png>
-Package pdftex.def Info: author1.png  used on input line 286.
-(pdftex.def)             Requested size: 72.27147pt x 90.33934pt.
-File: author1.png Graphic file (type png)
-<use author1.png>
-Package pdftex.def Info: author1.png  used on input line 286.
-(pdftex.def)             Requested size: 72.27147pt x 90.33934pt.
-<author2.png, id=49, 225.84375pt x 282.30469pt>
-File: author2.png Graphic file (type png)
-<use author2.png>
-Package pdftex.def Info: author2.png  used on input line 306.
-(pdftex.def)             Requested size: 72.27147pt x 90.33934pt.
-File: author2.png Graphic file (type png)
-<use author2.png>
-Package pdftex.def Info: author2.png  used on input line 306.
-(pdftex.def)             Requested size: 72.27147pt x 90.33934pt.
-File: notaglinelogo.png Graphic file (type png)
-<use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 334.
-(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
-
 
 LaTeX Font Warning: Font shape `T1/formata/m/sl' undefined
-(Font)              using `T1/formata/m/it' instead on input line 334.
+(Font)              using `T1/formata/m/it' instead on input line 265.
 
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -671,46 +657,62 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[4 <./author1.png> <./author2.png> <./figures/fig6.png>]
+[4 <./figures/fig9.png>]
+<author1.png, id=47, 225.84375pt x 282.30469pt>
+File: author1.png Graphic file (type png)
+<use author1.png>
+Package pdftex.def Info: author1.png  used on input line 269.
+(pdftex.def)             Requested size: 72.27147pt x 90.33934pt.
+File: author1.png Graphic file (type png)
+<use author1.png>
+Package pdftex.def Info: author1.png  used on input line 269.
+(pdftex.def)             Requested size: 72.27147pt x 90.33934pt.
+<author2.png, id=50, 225.84375pt x 282.30469pt>
+File: author2.png Graphic file (type png)
+<use author2.png>
+Package pdftex.def Info: author2.png  used on input line 289.
+(pdftex.def)             Requested size: 72.27147pt x 90.33934pt.
+File: author2.png Graphic file (type png)
+<use author2.png>
+Package pdftex.def Info: author2.png  used on input line 289.
+(pdftex.def)             Requested size: 72.27147pt x 90.33934pt.
+
+
+LaTeX Font Warning: Font shape `T1/formata/m/sl' undefined
+(Font)              using `T1/formata/m/it' instead on input line 317.
+
+File: notaglinelogo.png Graphic file (type png)
+<use notaglinelogo.png>
+Package pdftex.def Info: notaglinelogo.png  used on input line 317.
+(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[5 <./author1.png> <./author2.png> <./figures/fig13.png>]
 File: bullet.png Graphic file (type png)
 <use bullet.png>
-Package pdftex.def Info: bullet.png  used on input line 357.
+Package pdftex.def Info: bullet.png  used on input line 340.
 (pdftex.def)             Requested size: 5.0pt x 14.6871pt.
-
-
-LaTeX Font Warning: Font shape `T1/formata/m/sl' undefined
-(Font)              using `T1/formata/m/it' instead on input line 359.
-
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 359.
-(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
-
-Overfull \hbox (505.12177pt too wide) has occurred while \output is active
-[]
- []
-
-
-Overfull \hbox (505.12177pt too wide) has occurred while \output is active
-[]
- []
-
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-[5
-
- <./figures/fig9.png>]
-File: notaglinelogo.png Graphic file (type png)
-<use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 359.
+Package pdftex.def Info: notaglinelogo.png  used on input line 342.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 
 LaTeX Font Warning: Font shape `T1/formata/m/sl' undefined
-(Font)              using `T1/formata/m/it' instead on input line 359.
+(Font)              using `T1/formata/m/it' instead on input line 342.
 
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -727,14 +729,16 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[6 <./figures/fig13.png>]
+[6
+
+ <./figures/fig30.png>]
 
 LaTeX Font Warning: Font shape `T1/formata/m/sl' undefined
-(Font)              using `T1/formata/m/it' instead on input line 359.
+(Font)              using `T1/formata/m/it' instead on input line 342.
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 359.
+Package pdftex.def Info: notaglinelogo.png  used on input line 342.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -751,15 +755,15 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[7 <./figures/fig30.png>]
+[7 <./figures/fig15.png> <./figures/fig17.png>]
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 359.
+Package pdftex.def Info: notaglinelogo.png  used on input line 342.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 
 LaTeX Font Warning: Font shape `T1/formata/m/sl' undefined
-(Font)              using `T1/formata/m/it' instead on input line 359.
+(Font)              using `T1/formata/m/it' instead on input line 342.
 
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -776,43 +780,18 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[8 <./figures/fig15.png> <./figures/fig17.png>]
-
-LaTeX Font Warning: Font shape `T1/formata/m/sl' undefined
-(Font)              using `T1/formata/m/it' instead on input line 359.
-
-File: notaglinelogo.png Graphic file (type png)
-<use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 359.
-(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
-
-Overfull \hbox (505.12177pt too wide) has occurred while \output is active
-[]
- []
-
-
-Overfull \hbox (505.12177pt too wide) has occurred while \output is active
-[]
- []
-
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-[9
+[8
 
 
  <./figures/fig18.png> <./figures/fig19.png>]
-File: notaglinelogo.png Graphic file (type png)
-<use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 359.
-(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
-
 
 LaTeX Font Warning: Font shape `T1/formata/m/sl' undefined
-(Font)              using `T1/formata/m/it' instead on input line 359.
+(Font)              using `T1/formata/m/it' instead on input line 342.
 
+File: notaglinelogo.png Graphic file (type png)
+<use notaglinelogo.png>
+Package pdftex.def Info: notaglinelogo.png  used on input line 342.
+(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
 []
@@ -828,7 +807,7 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[10 <./figures/fig20.png>] (./access.aux)
+[9 <./figures/fig20.png>] (./access.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -839,16 +818,16 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  4823 strings out of 478287
  76788 string characters out of 5849290
- 391837 words of memory out of 5000000
+ 386523 words of memory out of 5000000
  22914 multiletter control sequences out of 15000+600000
  551135 words of font info for 161 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,12n,76p,1893b,514s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><./t1-formata-bold.pfb><./t1-formata-condmedium.pfb><./t1-formata-medium.pfb><./t1-formata-mediumitalic.pfb><./t1-formata-regular.pfb><./t1-giovannistd-bookitalic.pfb><./t1-times-bold.pfb><./t1-times-italic.pfb><./t1-times.pfb>
-Output written on access.pdf (10 pages, 13012904 bytes).
+ 70i,12n,76p,1893b,518s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><./t1-formata-bold.pfb><./t1-formata-condmedium.pfb><./t1-formata-medium.pfb><./t1-formata-mediumitalic.pfb><./t1-formata-regular.pfb><./t1-giovannistd-bookitalic.pfb><./t1-times-bold.pfb><./t1-times-italic.pfb><./t1-times.pfb>
+Output written on access.pdf (9 pages, 13078560 bytes).
 PDF statistics:
- 150 PDF objects out of 1000 (max. 8388607)
- 74 compressed objects within 1 object stream
+ 127 PDF objects out of 1000 (max. 8388607)
+ 60 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  113 words of extra memory for PDF output out of 10000 (max. 10000000)
 
