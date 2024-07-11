@@ -41,3 +41,13 @@ Upon submission:
 - Check grammer 
 - Check UK/US english 
 - Revise Paul's comments 
+
+TODO:
+[x] pie chart for types of errors that occur during testing
+[ ] Finish tables; devices, functions
+[ ] Add tones and metrics either as bullet points or table
+[ ] Finish figure descriptions
+[ ] Add figure to showcase real life scenarios
+[ ] Add algorithm 
+[x] Change/remove automation figure
+[x] Try out message with different tones (tone 1: success rate, tone 2: success rate)
