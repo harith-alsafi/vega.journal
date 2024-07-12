@@ -44,10 +44,18 @@ Upon submission:
 
 TODO:
 [x] pie chart for types of errors that occur during testing
-[ ] Finish tables; devices, functions
+[x] Finish tables; devices, functions
 [ ] Add tones and metrics either as bullet points or table
-[ ] Finish figure descriptions
+[x] Finish figure descriptions
+[ ] Add figure to showcase experiment process
 [ ] Add figure to showcase real life scenarios
 [ ] Add algorithm 
 [x] Change/remove automation figure
 [x] Try out message with different tones (tone 1: success rate, tone 2: success rate)
+
+figs 12, 13
+x-label make it bold
+natural -> conversational 
+robotic -> direct or minimal
+text length instead of tones
+add notes this is specefic to our , wa numbers may vary
