@@ -89,29 +89,47 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
 \section{Introduction}
 \label{sec:introduction}
-\PARstart{T}{he} evolution of large language models (LLM's) has led to rapid
-development in the  realm of intelligent systems. However, the application of
-LLM's hasn't been thoroughly explored in internet of things (IoT) and embedded
-systems (ESys). Traditionally, the development of IoT systems that seamlessly
-adapt to the user's need and tasks poses a considerable challenge. Leveraging
-the capabilities of LLMs presents an opportunity to address this challenge and
-bridge the gap between technical intricacies and user accessibility.
+
+Large language models (LLMs) have revolutionized natural language processing, demonstrating unprecedented capabilities in understanding and generating human-like text \cite{10.1145/3641289}. However, their potential in Internet of Things (IoT) and embedded systems (ESys) applications remains largely untapped. IoT systems have become increasingly prevalent across various domains, from smart homes to industrial automation \cite{8355897}. Despite their widespread adoption, developing and interacting with IoT systems often requires specialized knowledge and programming skills, creating significant barriers for non-technical users \cite{10.1145/3447526.3472036}.
+
+Traditional IoT interfaces typically rely on graphical user interfaces (GUIs) or specific programming languages, which can be challenging for users without technical expertise \cite{10.1145/3447526.3472036}. This limitation hinders the widespread adoption and utilization of IoT technologies, particularly in scenarios where rapid deployment and intuitive interaction are crucial. While research has been conducted on natural language interfaces for IoT, the application of advanced language models to IoT control and interaction remains an underexplored area \cite{KASSAB2020102663}.
+
+To address these challenges, we propose Vega, an intelligent chatbot platform that leverages LLMs to enable intuitive, natural language control of IoT devices. Our system focuses on a Raspberry Pi (RPi) connected to various sensors and devices as a representative IoT setup. By integrating LLMs with IoT infrastructure, we aim to bridge the gap between complex device functionality and user-friendly interaction, allowing users to control and query IoT systems using everyday language.
+
+Our research builds upon recent advancements in LLMs, specifically OpenAI's GPT-based models \cite{OpenAI_GPT}, which utilize transformer neural network architectures to capture context and relationships within text data. By applying these powerful language understanding capabilities to IoT interaction, we aim to create a more accessible and flexible approach to device control and monitoring. Our approach not only enhances accessibility for non-technical users but also opens new avenues for creative and intelligent IoT applications, addressing the standardization challenges highlighted in the literature \cite{7821686}.
+
+Vega's architecture comprises three key components: a physical circuit with input and output devices, an RPi integrating a control server, and a web application incorporating LLM logic. This modular design allows for flexibility and scalability, enabling the system to adapt to various IoT scenarios and user requirements \cite{taylor2010software}. By utilizing the RPi as a central hub, we can leverage its versatility and widespread adoption in the IoT community \cite{8067944}.
+
+The main contributions of this paper are as follows:
+
+\begin{enumerate}
+    \item We present a modular architecture that integrates LLMs with IoT systems, specifically designed for natural language interaction with RPi-based setups.
+    \item We develop a novel approach for translating natural language commands into executable instructions for IoT devices, capable of handling complex, conditional logic without additional RPi-level coding.
+    \item We implement and evaluate a prototype system demonstrating the feasibility and effectiveness of LLM-driven IoT control across a range of task complexities and user scenarios.
+    \item We provide insights into the scalability and potential applications of our approach in diverse settings such as smart homes, industrial monitoring, and educational environments.
+\end{enumerate}
+
+The rest of this paper is organized as follows: Section II provides background information and discusses related work in IoT interfaces and natural language processing. Section III details our methodology, including the overall system architecture, physical circuit design, RPi configuration, and web application implementation. Section IV presents our experimental setup, results, and analysis, showcasing the system's performance in handling complex commands and its potential real-world applications. Finally, Section V concludes the paper and outlines directions for future research.
+
 \section{Background and Related Work}
+\label{sec:background}
 
-\subsection{Applications of chat oriented systems}
+\subsection{NLP in IoT and ESys}
 \subsection{LLM's in industrial applications}
-\subsection{LLM's in IoT and ESys}
+\subsection{Accessible Chatbot }
 
-\Figure[t!](topskip=0pt, botskip=0pt, midskip=0pt)[width=\textwidth]{{figures/fig1.png}}
+
+
+\section{Methodology}
+\label{sec:methodology}
+
+Hi \cite{taylor2010software} how are you
+
+\subsection{Overall Architecture}
+\Figure[t!](topskip=0pt, botskip=0pt, midskip=0pt)[width=\textwidth]{{figures/fig1-ab.png}}
 { \textbf{Magnetization as a function of applied field.
 It is good practice to explain the significance of the figure in the caption.}\label{fig1}}
 
-\section{Methodology}
-
-\subsection{Overall Architecture}
-\Figure[t!](topskip=0pt, botskip=0pt,
-midskip=0pt)[width=\textwidth]{{figures/fig2.png}}
-{ \textbf{The overall arhcitecture of the system.}\label{fig1}}
 % \begin{table}
 %     \caption{\textbf{Units for Magnetic Properties}}
 %     \label{table}
@@ -246,19 +264,24 @@ midskip=0pt)[width=\textwidth]{{figures/fig5.png}}
 midskip=0pt)[scale=0.4]{{figures/fig6.png}}
 { \textbf{Architecture design of the RPi control server}\label{fig3}}
 
-\subsection{Web App Design}
+\subsection{Web App User Interface}
 \Figure[t!](topskip=0pt, botskip=0pt,
 midskip=0pt)[width=\textwidth]{{figures/fig9.png}}
 { \textbf{Webapp user interface implementation}\label{fig4}}
+
+\subsection{Web App LLM Logic}
+\Figure[t!](topskip=0pt, botskip=0pt,
+midskip=0pt)[width=0.99\columnwidth]{{figures/fig12.png}}
+{ \textbf{Evaluation metrics for the functions defined earlier in .}\label{fig7}}
 
 \Figure[t!](topskip=0pt, botskip=0pt,
 midskip=0pt)[width=\textwidth]{{figures/fig13.png}}
 { \textbf{Webapp logic design}\label{fig5}}
 
 \section{Experiment and Results}
-\label{sec:guidelines}
+\label{sec:experiment}
 
-\subsection{Complex Commands}
+\subsection{Complex Commands In Action}
 \Figure[t!](topskip=0pt, botskip=0pt,
 midskip=0pt)[width=\textwidth]{{figures/fig30.png}}
 { \textbf{System case studies}\label{fig6}}
@@ -269,10 +292,6 @@ midskip=0pt)[width=\textwidth]{{figures/fig30.png}}
 { \textbf{Magnetization as a function of applied field.
 It is good practice to explain the significance of the figure in the caption.}\label{fig6}}
 \subsection{Result Analysis}
-\Figure[t!](topskip=0pt, botskip=0pt,
-midskip=0pt)[width=0.99\columnwidth]{{figures/fig12.png}}
-{ \textbf{Evaluation metrics for the functions defined earlier in .}\label{fig7}}
-
 
 % define how complexity is measured 
 \Figure[t!](topskip=0pt, botskip=0pt,
@@ -312,52 +331,18 @@ midskip=0pt)[width=0.80\columnwidth]{{figures/fig34.png}}
 midskip=0pt)[width=0.99\columnwidth]{{figures/fig35.png}}
 { \textbf{Success rate of different tones of the same message.}\label{fig13}}
 
-
 \subsection{Real Life Applicability}
 
-\section{Conclusion}
-
+\section{Conclusion and future work}
+\label{sec:conclusion}
 
 \section*{Acknowledgment}
 
+\bibliographystyle{unsrt}
+\bibliography{refs}
 
-\begin{thebibliography}{00}
-
-    \bibitem{b1} G. O. Young, ``Synthetic structure of industrial plastics,''
-    in \emph{Plastics,} 2\textsuperscript{nd} ed., vol. 3, J. Peters, Ed. New York,
-    NY, USA: McGraw-Hill, 1964, pp. 15--64.
-
-    \bibitem{b2} W.-K. Chen, \emph{Linear Networks and Systems.} Belmont, CA,
-    USA: Wadsworth, 1993, pp. 123--135.
-
-    \bibitem{b3} J. U. Duncombe, ``Infrared navigation---Part I: An assessment
-    of feasibility,'' \emph{IEEE Trans. Electron Devices}, vol. ED-11, no. 1, pp.
-    34--39, Jan. 1959, 10.1109/TED.2016.2628402.
-
-
-\end{thebibliography}
-
-\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{author1.png}}]{First
-    A. Author} received the B.S. and M.S. degrees in aerospace engineering from
-    the University of Virginia, Charlottesville, in 2001 and the Ph.D. degree
-    in
-    mechanical engineering from Drexel University, Philadelphia, PA, in 2008.
-
-    From 2001 to 2004, he was a Research Assistant with the Princeton Plasma
-    Physics Laboratory. Since 2009, he has been an Assistant Professor with the
-    Mechanical Engineering Department, Texas A{\&}M University, College
-    Station.
-    He is the author of three books, more than 150 articles, and more than 70
-    inventions. His research interests include high-pressure and high-density
-    nonthermal plasma discharge processes and applications, microscale plasma
-    discharges, discharges in liquids, spectroscopic diagnostics, plasma
-    propulsion, and innovation plasma applications. He is an Associate Editor
-    of
-    the journal \emph{Earth, Moon, Planets}, and holds two patents.
-
-    Dr. Author was a recipient of the International Association of Geomagnetism
-    and Aeronomy Young Scientist Award for Excellence in 2008, and the IEEE
-    Electromagnetic Compatibility Society Best Symposium Paper Award in 2011.
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{author1.png}}]{Harith Al-Safi} received the BEng industrial degree in Electronics and Computer Engineering from
+    the University of Leeds, Leeds, in 2024. From 2022 to 2023, he was an IoT Software Engineer at Johnson Controls. He is currently pursuing a Graduate Software Developer role at BT Group. His research interests include IoT, embedded systems, and machine learning.
 \end{IEEEbiography}
 
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{author2.png}}]{Second
