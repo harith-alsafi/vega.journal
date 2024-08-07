@@ -45,13 +45,29 @@ Upon submission:
 TODO:
 [x] pie chart for types of errors that occur during testing
 [x] Finish tables; devices, functions
-[ ] Add tones and metrics either as bullet points or table
+[ ] Add tones and metrics in experiment section either as bullet points or table
 [x] Finish figure descriptions
-[ ] Add figure to showcase experiment process
-[ ] Add figure to showcase real life scenarios
-[ ] Add algorithm 
+[ ] Change figure to showcase experiment process
+[x] Add figure to showcase real life scenarios
+[ ] Add algorithm for webapp backend
 [x] Change/remove automation figure
 [x] Try out message with different tones (tone 1: success rate, tone 2: success rate)
+[ ] Add link to code
+[ ] Add link to video 
+[ ] Make sure cross refernce is correct 
+[ ] Check figure and table names and description 
+[ ] Check grammer 
+[ ] Check spelling 
+[ ] Check U/US 
+[ ] Check acronyms 
+[ ] Check redefinitions
+[ ] Check extra long sections 
+[ ] Look which figures to remove 
+[ ] Check references 
+[ ] Check Paul's
+[ ] Check harith
+[ ] Check craig 
+[ ] Make sure in text refernces are used correct
 
 figs 12, 13
 x-label make it bold

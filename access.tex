@@ -27,7 +27,7 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
     0000.}
 \doi{10.1109/ACCESS.2024.0429000}
 
-\title{Vega: Intelligent Chatbot Platform for Internet of Things and Embedded Systems Development}
+\title{Vega: LLM-driven Intelligent Chatbot Platform for Internet of Things Development}
 % //TODO: ask about IEEE membership
 \author{\uppercase{Harith Al-Safi}, \IEEEmembership{Fellow, IEEE},
     \uppercase{Harith Ibrahim}, and Paul Steenson,
@@ -109,26 +109,76 @@ The main contributions of this paper are as follows:
     \item We provide insights into the scalability and potential applications of our approach in diverse settings such as smart homes, industrial monitoring, and educational environments.
 \end{enumerate}
 
-The rest of this paper is organized as follows: Section II provides background information and discusses related work in IoT interfaces and natural language processing. Section III details our methodology, including the overall system architecture, physical circuit design, RPi configuration, and web application implementation. Section IV presents our experimental setup, results, and analysis, showcasing the system's performance in handling complex commands and its potential real-world applications. Finally, Section V concludes the paper and outlines directions for future research.
+The rest of this paper is organized as follows: Section \ref{sec:background} provides background information and discusses related work in IoT interfaces and natural language processing. Section \ref{sec:methodology} details our methodology, including the overall system architecture, physical circuit design, RPi configuration, and web application implementation. Section \ref{sec:experiment} presents our experimental setup, results, and analysis, showcasing the system's performance in handling complex commands and its potential real-world applications. Finally, Section \ref{sec:conclusion} concludes the paper and outlines directions for future research.
 
 \section{Background and Related Work}
 \label{sec:background}
 
-\subsection{NLP in IoT and ESys}
-\subsection{LLM's in industrial applications}
-\subsection{Accessible Chatbot }
+\subsection{Industrial applications of LLM's}
+The foundation for LLMs in natural language processing was laid by \cite{DBLP:journals/corr/VaswaniSPUJGKP17} with the introduction of the Transformer architecture. These models, trained on vast amounts of text data, have shown potential in applications ranging from code generation to robotic control.
 
+Recent research has explored diverse applications of LLMs. \cite{10121440} demonstrated the use of LLMs like ChatGPT and GPT-3 for generating data visualizations from natural language queries. In cybersecurity, \cite{10198233} investigated both defensive and offensive applications of GenAI tools, highlighting potential risks and opportunities. \cite{10466545} compared the performance of phishing emails created by GPT-4 against those manually designed using traditional methods, revealing the potential of AI-enabled phishing attacks.
+
+The integration of LLMs with robotics has emerged as a promising field. \cite{10235949} showed how ChatGPT could convert natural language instructions into executable robot actions using few-shot prompts. \cite{10500490} introduced PromptCraft, a platform for collaborative development of prompting schemes for robotics applications. \cite{Singh2023} presented ProgPrompt, a method using programmatic LLM prompts to enable plan generation across different environments and robot capabilities.
+
+\cite{DeChant2023} demonstrated a system for summarizing and answering questions about a virtual robot's past actions using ego-centric video frames. \cite{Ding2023} introduced COWP, a framework for open-world task planning that augments robot action knowledge with task-oriented commonsense knowledge from LLMs. \cite{kannan2024smartllmsmartmultiagentrobot} proposed SMART-LLM, a framework for multi-robot task planning using LLMs to convert high-level instructions into multi-robot task plans.
+
+\cite{Wu2023} developed TidyBot, a system combining language-based planning and perception with LLMs to infer generalized user preferences for household cleanup tasks. \cite{wang2024gensimgeneratingroboticsimulation} introduced GenSim, an approach using LLMs to generate rich simulation environments and expert demonstrations for robotic tasks. This work demonstrates the potential of LLMs in enhancing task-level generalization in robotic policy training.
+
+In the realm of education, \cite{shu2024llmscodingroboticseducation} explored the use of LLMs for robot code explanation, generation, and modification in teaching coding to children. Their work highlighted the superior performance of GPT-4V in both traditional coding tasks and robot code generation. In the context of embodied AI, \cite{10.5555/3618408.3618748} proposed PaLM-E, an embodied multimodal language model incorporating real-world sensor data, showcasing its potential in robotic manipulation planning and visual question answering.
+
+% \cite{wu2023autogenenablingnextgenllm} presented AutoGen, a framework for building LLM applications via multi-agent conversations, demonstrating effectiveness in various domains including mathematics and coding. This approach opens up new possibilities for complex problem-solving using LLMs.
+
+% The foundation for LLMs in natural language processing was laid by \citet{DBLP:journals/corr/VaswaniSPUJGKP17} with the introduction of the Transformer architecture. Subsequently, \citet{touvron2023llamaopenefficientfoundation} introduced LLaMA, a collection of foundation language models trained on publicly available datasets, demonstrating competitive performance with proprietary models.
+
+
+
+These advancements in LLM applications for robotics provide a foundation for extending similar techniques to IoT scenarios. The ability to interpret natural language instructions, generate action sequences, and integrate multimodal sensor data holds significant potential for enabling intuitive and intelligent control of IoT devices and systems. As research progresses, we anticipate further innovations in LLM-driven IoT interfaces, potentially revolutionizing how users interact with smart environments.
+
+\subsection{Natural Language Processing for IoT}
+Natural Language Processing (NLP) has emerged as a transformative technology in IoT applications, enabling intuitive human-machine interactions. The integration of NLP in IoT systems allows users to control and query devices using everyday language, bridging the gap between complex technological interfaces and user-friendly experiences \cite{10.1145/3643505}. This integration is particularly crucial as IoT devices become ubiquitous in various domains, from smart homes to industrial settings, where ease of use and accessibility are paramount.
+
+Recent research has demonstrated the potential of NLP in IoT contexts. For instance, Petrović et al. explored the use of ChatGPT, a large language model (LLM), in IoT systems, focusing on Arduino-based applications \cite{10315791}. Their work highlighted the possibilities of leveraging LLMs for both question-answering and automated code generation in IoT environments. Similarly, Zhong et al. proposed CASIT, a collective intelligent agent system for IoT that utilizes LLMs to process and interpret data from multiple sources efficiently \cite{10439991}. These studies underscore the growing interest in applying advanced NLP techniques to enhance IoT functionality and user experience.
+
+The integration of LLMs represents a significant advancement in NLP capabilities for IoT. Traditional NLP methods often struggle with context understanding and complex query interpretation, limitations that LLMs can overcome. LLMs offer improved natural language understanding, enabling more nuanced and context-aware interactions with IoT devices. For example, King et al. demonstrated how LLMs can interpret under-specified commands in smart home environments, translating vague user intentions into specific device actions \cite{10.1145/3643505}.
+
+The potential of LLMs in IoT extends beyond simple command interpretation. They can enable more sophisticated applications such as predictive maintenance, anomaly detection, and personalized user experiences. Sarzaeim et al. explored the use of LLMs in smart policing systems, showcasing their potential in complex data analysis and pattern recognition \cite{10538107}. This application hints at the broader possibilities of LLMs in IoT, where they could be used to analyze and interpret vast amounts of sensor data, making IoT systems more intelligent and proactive.
+
+However, integrating LLMs into IoT systems also presents challenges, including privacy concerns, computational requirements, and the need for domain-specific training. Despite these challenges, the potential benefits of LLM-enhanced NLP in IoT are significant. As demonstrated by Xu et al., natural language interfaces can greatly improve the usability of IoT platforms, allowing for more complex and nuanced interactions \cite{9808139}. By leveraging the advanced capabilities of LLMs, future IoT systems could offer unprecedented levels of intuitive control and intelligent automation, paving the way for more accessible and powerful IoT applications across various domains.
+
+\subsection{Chat oriented architectures}
+The integration of large language models (LLMs) with Internet of Things (IoT) systems has emerged as a promising frontier, enabling natural language interaction and intelligent control of physical devices. While this specific application domain remains relatively unexplored, several recent works have pioneered the fusion of LLMs and robotics, laying the groundwork for their extension to IoT scenarios \cite{10.1145/3610977.3634966}.
+
+Chatbots have gained significant traction across various industries, serving as direct communication channels between companies and end-users \cite{8960373}. However, existing frameworks often require advanced technical knowledge for complex interactions and lack flexibility in adapting to evolving company needs. The deployment of chatbot applications typically demands a deep understanding of targeted platforms, particularly back-end connections, which increases development and maintenance costs \cite{8960373}.
+
+To address these challenges, researchers have proposed novel approaches to chatbot development. Xatkit, for instance, offers a set of Domain Specific Languages to define chatbots in a platform-independent manner, along with a runtime engine for automatic deployment and conversation management \cite{8960373}. Similarly, SPADE 3 presents a redesigned middleware to support the new generation of multi-agent systems, aiming to popularize agent technology as a dynamic and flexible solution to current problems \cite{9207929}.
+
+Recent studies have explored multi-modal chatbots in intelligent manufacturing settings, demonstrating the potential for AI-powered dialogue systems to assist users in complex assembly tasks \cite{9440470}. These systems leverage both textual and visual features to improve intent classification and provide relevant information to users. The development of conversation-driven approaches for chatbot management has also shown promise in evolving chatbot content through the analysis of user interactions, allowing for a cyclic and human-supervised process \cite{9681834}.
+
+In the realm of human-robot interaction, researchers have developed task-oriented dialogue systems for industrial robots, addressing the lack of domain-specific discourse corpora and emphasizing user experience alongside task completion rates \cite{9869659}. These efforts have resulted in datasets like IRWoZ and frameworks such as ToD4IR, which integrate small talk concepts and human-to-human conversation strategies to support more natural and adaptable dialogue environments.
+
+The potential of LLMs in easing chatbot development has been demonstrated through large-scale models that can learn blended conversational skills when provided with appropriate training data and generation strategies \cite{roller-etal-2021-recipes}. These models have shown improvements in multi-turn dialogue engagingness and humanness measurements, paving the way for more sophisticated chatbot applications in various domains, including IoT systems. 
 
 
 \section{Methodology}
 \label{sec:methodology}
-
-Hi \cite{taylor2010software} how are you
-
 \subsection{Overall Architecture}
 \Figure[t!](topskip=0pt, botskip=0pt, midskip=0pt)[width=\textwidth]{{figures/fig1-ab.png}}
-{ \textbf{Magnetization as a function of applied field.
-It is good practice to explain the significance of the figure in the caption.}\label{fig1}}
+{ \textbf{Overall architecture of Vega alongside a simple example.}\label{fig1}}
+
+The architecture of the Vega system follows key principles of software design to ensure scalability, maintainability, and robustness \cite{taylor2010software}. The system adopts a modular approach, dividing functionality into distinct components with specific purposes. This design promotes code reuse, facilitates testing, and enhances overall maintenance. The architecture also implements separation of concerns, where different aspects such as user interface, core functionality, and data management are segregated into distinct layers, improving code organization and enabling independent development.
+
+Vega's architecture comprises three main modules: a Web Application, a RPi, and a Physical Circuit. These modules interact in a client-server model \cite{tanenbaum2002distributed}, with the Web Application serving as the client and the RPi as the server. The Physical Circuit is connected to the RPi via hardwired connections.
+
+The Web Application consists of two primary sub-modules: the User Interface (VegaChat) and the App Logic (VegaAi). The App Logic incorporates LLM logic for translating user input into commands and generating responses. Redis \cite{6106531} is employed as a non-relational database to store chat history, messages, and RPi connection states.
+
+The RPi module hosts a Control Server (VegaPi) responsible for parsing requests from the App Logic and executing them on the Physical Circuit. An SQLite database \cite{sqlite, sqliteapplication} is used to store data extracted from the physical circuit. The Physical Circuit comprises input devices (sensors) and output devices (LEDs, LCDs, etc.) connected to the RPi's General Purpose Input/Output (GPIO) pins.
+
+A typical use case involves a user interacting with the Web Application interface, sending a natural language command such as "Turn on the red LED." The LLM interprets this command and sends the appropriate instruction to the RPi's Control Server. The server then relays the command to the Physical Circuit via GPIO pins. Upon execution, the circuit sends feedback to the RPi, which is then communicated back to the user through the Web Application.
+
+The technology stack for Vega has been carefully selected to ensure robustness, scalability, and accessibility \cite{math9040308}. The Web Application is built using React \cite{React2024} with TypeScript, employing RadixUI \cite{radix-ui} for accessible components and TailwindCSS \cite{tailwindcss} for responsive design. The App Logic utilizes Node.js and integrates with OpenAI's GPT models \cite{OpenAI_GPT} for natural language processing. The RPi Control Server is developed using Flask \cite{Flask2024}, a lightweight Python web framework, while the circuit code leverages the RPi library for GPIO interaction.
+
+This architecture enables Vega to bridge the gap between complex IoT functionality and user-friendly interaction. By leveraging LLMs for natural language processing and control, the system opens up new possibilities for intuitive IoT applications in various domains, from smart homes to industrial monitoring and educational environments \cite{8067944}. The modular design and carefully chosen technology stack ensure that Vega remains adaptable, maintainable, and scalable as IoT applications continue to evolve and expand.
 
 % \begin{table}
 %     \caption{\textbf{Units for Magnetic Properties}}
@@ -161,7 +211,32 @@ It is good practice to explain the significance of the figure in the caption.}\l
 midskip=0pt)[width=\textwidth]{{figures/fig5.png}}
 { \textbf{Soldered physical circuit connected to the RPi}\label{fig2}}
 
+The physical implementation of the Vega platform comprises a custom-designed circuit board that interfaces with a Raspberry Pi (RPi), integrating various input and output devices to facilitate IoT and embedded systems applications. This hardware configuration forms the foundation for the natural language-controlled system, enabling users to interact with physical components through LLM-interpreted commands.
+
+The circuit board incorporates a diverse array of input devices, including an ultrasonic sensor for distance measurement, a limit switch for binary state detection, a temperature and humidity sensor for environmental monitoring, a GPS module for location tracking, and a push button for direct user input \cite{electronicwings_sensors_modules}. These components collectively provide a rich set of data sources, enabling the system to respond to complex, context-aware queries and commands.
+
+Output devices on the board include a 12V fan for cooling or air circulation, multiple LEDs (yellow, red, and blue) for visual indicators, a 5V servo motor for precise rotational control, and an I2C LCD display for text output. A 5V relay is incorporated to control the 12V fan, demonstrating the system's capability to manage higher-voltage components safely \cite{smith2020}. The inclusion of these diverse output devices allows for a wide range of physical responses to user commands, from simple visual feedback to more complex mechanical actions.
+
+Power management is a crucial aspect of the circuit design. While most components operate on the 5V supply provided by the RPi, the 12V fan requires a separate power source. To address this, a 9V battery is utilized in conjunction with the relay, ensuring proper voltage supply while maintaining RPi-based control \cite{monk2019}. This setup illustrates the system's ability to accommodate components with varying power requirements within a unified control structure.
+
+The circuit board is designed to connect directly to the RPi's GPIO pins, streamlining the interface between the physical components and the computational core of the system. A camera module, while not physically present on the circuit board, is connected directly to the RPi, expanding the system's capabilities to include image capture and analysis \cite{pi_camera_2018}.
+
+This hardware configuration supports a wide range of potential applications. In smart home scenarios, the temperature sensor and fan could be used for automated climate control, while the GPS module could enable location-based automation in mobile or outdoor settings. In industrial environments, the ultrasonic sensor and limit switch could be employed for proximity detection and safety systems, with the LEDs and LCD providing status information to operators \cite{mcmanus2021}.
+
+The versatility of this hardware setup, combined with the LLM-driven control system, enables the exploration of complex, conditional logic without requiring additional RPi-level coding. This integration of diverse sensors and actuators with natural language processing capabilities represents a significant step forward in creating intuitive, user-friendly interfaces for IoT and embedded systems, bridging the gap between sophisticated device functionality and accessible user interaction.
+
 \subsection{Raspberry Pi Design}
+
+\Figure[t!](topskip=0pt, botskip=0pt,
+midskip=0pt)[scale=0.4]{{figures/fig6.png}}
+{ \textbf{Architecture design of the RPi control server}\label{fig3}}
+
+The architecture of the Raspberry Pi (RPi) integration with the existing codebase is designed to enable seamless control and manipulation of the circuit without interfering with pre-existing logic. This approach leverages parallel computing concepts, utilizing processor cores and threads to execute specific logic concurrently with existing code \cite{wilkinson2005parallel}.
+
+The system architecture, illustrated in Figure 3, comprises two main threads: the Control Server Thread and the Database Thread. The Control Server Thread manages a Flask-based web framework, storing predefined functions for a set of circuit devices. These functions are exposed through a Representational State Transfer (REST) API, facilitating communication between different software systems over the internet \cite{Surwase2016RESTAM}.
+
+The Database Thread retrieves sensor data at two-second intervals, storing it in an SQLite database. This persistent storage solution ensures data preservation in the event of system failures, enabling data recovery, analytics, and statistical analysis. The stored data can be retrieved upon request and provided to the Large Language Models (LLMs) in the web application, enhancing system monitoring and diagnostic capabilities.
+
 \begin{table}
     \caption{\textbf{Physical devices defined on the Control Server, which are then supplied to the LLM}}
     \label{table1}
@@ -215,6 +290,8 @@ midskip=0pt)[width=\textwidth]{{figures/fig5.png}}
     \end{tabular}
 \end{table}
 
+Table 1 presents the devices defined in the Control Server, categorized as inputs or outputs. This information is stored and transmitted in JavaScript Object Notation (JSON) format via the "get-devices" REST API endpoint \cite{tanenbaum2002distributed}. Input devices primarily transmit data for database storage, while output devices receive commands for circuit manipulation.
+
 \begin{table}
     \caption{\textbf{Defined functions on the Control Server, called by the LLM based on user input, executes on the RPi and processed on the webapp}}
     \label{table2}
@@ -260,9 +337,19 @@ midskip=0pt)[width=\textwidth]{{figures/fig5.png}}
         \hline
     \end{tabular}
 \end{table}
+
+The Control Server exposes a set of defined functions, listed in Table 2, which the LLM utilizes to determine logic and execute commands on circuit components. These functions are accessible to the LLM through the "get-functions" REST API endpoint. To execute a particular function, the LLM passes the function identifier and required parameters to the web application logic, which then invokes the "run-function" API endpoint.
+
+The choice of REST API over alternative protocols such as MQTT was based on several factors. REST offers simplicity, scalability, and statelessness, making it well-suited for web-based applications \cite{s21206904}. It also provides a uniform interface, enabling easier integration with various client applications. While MQTT excels in low-bandwidth, high-latency environments, the current system architecture prioritizes the flexibility and widespread support offered by REST APIs in web development ecosystems.
+
 \Figure[t!](topskip=0pt, botskip=0pt,
-midskip=0pt)[scale=0.4]{{figures/fig6.png}}
-{ \textbf{Architecture design of the RPi control server}\label{fig3}}
+midskip=0pt)[scale=0.17]{{figures/fig11-refined.png}}
+{ \textbf{Webapp user interface implementation}\label{fig4}}
+
+The communication flow between the web application and the RPi follows a request-response pattern as shown in Figure 4. The web application sends REST API requests with JSON data specifying the function and arguments for the RPi to execute. The RPi processes these requests, executes the specified functions, and returns JSON responses with the execution status to the web application. This bidirectional communication enables real-time control and monitoring of the IoT devices.
+
+This architecture facilitates a modular and extensible system, allowing for easy addition of new devices and functions. It also provides a layer of abstraction between the physical hardware and the LLM-driven interface, enabling natural language control of IoT devices without requiring users to understand the underlying technical details. The integration of LLMs with this IoT control system represents a significant step towards more intuitive and accessible IoT interfaces, potentially broadening the application of IoT technologies across various domains \cite{taylor2010software}.
+
 
 \subsection{Web App User Interface}
 \Figure[t!](topskip=0pt, botskip=0pt,
@@ -288,7 +375,7 @@ midskip=0pt)[width=\textwidth]{{figures/fig30.png}}
 
 
 \subsection{Automated Evaluation}
-\Figure[t!](topskip=0pt, botskip=0pt, midskip=0pt)[scale=0.48]{{figures/fig15.png}}
+\Figure[t!](topskip=0pt, botskip=0pt, midskip=0pt)[width=0.99\columnwidth]{{figures/fig15-refined.png}}
 { \textbf{Magnetization as a function of applied field.
 It is good practice to explain the significance of the figure in the caption.}\label{fig6}}
 \subsection{Result Analysis}
@@ -324,11 +411,11 @@ midskip=0pt)[width=0.99\columnwidth]{{figures/fig37.png}}
 { \textbf{Success rate against message complexity and Top P of the LLM.}\label{fig11}}
 
 \Figure[t!](topskip=0pt, botskip=0pt,
-midskip=0pt)[width=0.80\columnwidth]{{figures/fig34.png}}
+midskip=0pt)[scale=0.42]{{figures/fig34.png}}
 { \textbf{What types of errors occured throughout testing.}\label{fig12}}
 
 \Figure[t!](topskip=0pt, botskip=0pt,
-midskip=0pt)[width=0.99\columnwidth]{{figures/fig35.png}}
+midskip=0pt)[scale=0.38]{{figures/fig35.png}}
 { \textbf{Success rate of different tones of the same message.}\label{fig13}}
 
 \subsection{Real Life Applicability}
