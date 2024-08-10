@@ -168,14 +168,6 @@ Zhipeng Xu, Hao Wu, Xu~Chen, Yongmei Wang, and Zhenyu Yue.
   platforms.
 \newblock {\em IEEE Access}, 10:68655--68668, 2022.
 
-\bibitem{10.1145/3610977.3634966}
-Callie~Y. Kim, Christine~P. Lee, and Bilge Mutlu.
-\newblock Understanding large-language model (llm)-powered human-robot
-  interaction.
-\newblock In {\em Proceedings of the 2024 ACM/IEEE International Conference on
-  Human-Robot Interaction}, HRI '24, page 371–380, New York, NY, USA, 2024.
-  Association for Computing Machinery.
-
 \bibitem{8960373}
 Gwendal Daniel, Jordi Cabot, Laurent Deruelle, and Mustapha Derras.
 \newblock Xatkit: A multimodal low-code chatbot development framework.
@@ -305,5 +297,11 @@ Vijaya~B. Surwase.
 Jacek Wytrębowicz, Krzysztof Cabaj, and Jerzy Krawiec.
 \newblock Messaging protocols for iot systems—a pragmatic comparison.
 \newblock {\em Sensors}, 21(20), 2021.
+
+\bibitem{kim2024llmemestimatinggpumemory}
+Taeho Kim, Yanming Wang, Vatshank Chaturvedi, Lokesh Gupta, Seyeon Kim, Yongin
+  Kwon, and Sangtae Ha.
+\newblock Llmem: Estimating gpu memory usage for fine-tuning pre-trained llms,
+  2024.
 
 \end{thebibliography}
