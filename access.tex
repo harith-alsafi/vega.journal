@@ -117,29 +117,19 @@ The rest of this paper is organized as follows: Section \ref{sec:background} pro
 \label{sec:background}
 
 \subsection{Industrial applications of LLM's}
-The foundation for LLMs in natural language processing was laid by Vaswani \cite{DBLP:journals/corr/VaswaniSPUJGKP17} with the introduction of the Transformer architecture. These models, trained on vast amounts of text data, have shown potential in applications ranging from code generation to robotic control.
+LLM's have revolutionized natural language processing, with the Transformer architecture \cite{DBLP:journals/corr/VaswaniSPUJGKP17} serving as a foundational breakthrough. These models, trained on vast corpora, have demonstrated remarkable versatility across diverse domains, including robotics and IoT applications. 
 
-% // TODO: maybe remove this 
-Recent research has explored diverse applications of LLMs. Maddigan \cite{10121440} demonstrated the use of LLMs like ChatGPT and GPT-3 for generating data visualizations from natural language queries. In cybersecurity, Gupta \cite{10198233} investigated both defensive and offensive applications of GPT models, highlighting potential risks and opportunities. Heiding \cite{10466545} compared the performance of phishing emails created by GPT-4 against those manually designed using traditional methods, revealing the potential of AI-enabled phishing attacks.
+Maddiga et al. \cite{10121440} showcased this versatility with Chat2VIS, leveraging ChatGPT and GPT-3 to generate data visualizations from natural language queries. Their innovative approach demonstrated how LLM's could be effectively used to convert free-form natural language directly into visualization code, even when queries were highly misspecified or underspecified. Meanwhile, Gupta et al. \cite{10198233} explored the dual-edged implications of ChatGPT in cybersecurity, coining the term "ThreatGPT" to highlight potential risks. Their research delved into both the offensive and defensive applications of generative AI in cybersecurity. As they demonstrated how malicious actors could exploit ChatGPT's capabilities for creating social engineering attacks. They also examined how these same tools could be used to enhance cybersecurity measures, such as improving threat intelligence.
 
-% // TODO: instead of focusing on many researches, focus on a few and dive deeply into them 
+Recent research has explored the integration of LLMs with robotic systems, paving the way for intuitive human-robot interaction. Singh and Blukis \cite{Singh2023} introduced ProgPrompt, a novel approach leveraging LLMs to generate action sequences based on natural language instructions. By prompting LLMs with program-like specifications of available actions and objects, along with example programs, their method enables plan generation across diverse environments, robot capabilities, and tasks. This work demonstrated state-of-the-art success rates in VirtualHome household tasks and was successfully deployed on a physical robot arm for tabletop tasks.
 
-% -----------------------------------------------------------------------------------------
-The integration of LLMs with robotics has emerged as a promising field. Wake \cite{10235949} showed how ChatGPT could convert natural language instructions into executable robot actions using few-shot prompts. Vemprala \cite{10500490} introduced PromptCraft, a platform for collaborative development of prompting schemes for robotics applications. Singh \cite{Singh2023} presented ProgPrompt, a method using programmatic LLM prompts to enable plan generation across different environments and robot capabilities.
+Expanding on this concept, Driess et al. \cite{10.5555/3618408.3618748} proposed PaLM-E, an embodied multimodal language model that incorporates real-world sensor data into language models. PaLM-E is trained on tasks such as robotic manipulation planning and visual question answering, exhibiting positive transfer across language, vision, and visual-language domains. This research highlights the potential of LLMs in grounding language understanding in physical environments, a crucial aspect for IoT applications.
 
-\cite{DeChant2023} demonstrated a system for summarizing and answering questions about a virtual robot's past actions using ego-centric video frames. \cite{Ding2023} introduced COWP, a framework for open-world task planning that augments robot action knowledge with task-oriented commonsense knowledge from LLMs. \cite{kannan2024smartllmsmartmultiagentrobot} proposed SMART-LLM, a framework for multi-robot task planning using LLMs to convert high-level instructions into multi-robot task plans.
+In the context of multi-agent systems, Kannan et al. \cite{kannan2024smartllmsmartmultiagentrobot} developed SMART-LLM, a framework for embodied multi-robot task planning. This approach uses LLMs to convert high-level task instructions into multi-robot task plans through a series of stages, including task decomposition, coalition formation, and task allocation. The authors created a benchmark dataset for validating multi-robot task planning problems, demonstrating the framework's effectiveness in both simulated and real-world scenarios.
 
-\cite{Wu2023} developed TidyBot, a system combining language-based planning and perception with LLMs to infer generalized user preferences for household cleanup tasks. \cite{wang2024gensimgeneratingroboticsimulation} introduced GenSim, an approach using LLMs to generate rich simulation environments and expert demonstrations for robotic tasks. This work demonstrates the potential of LLMs in enhancing task-level generalization in robotic policy training.
+Wu et al. \cite{Wu2023} presented TidyBot, a system that combines language-based planning and perception with LLMs to infer generalized user preferences for household cleanup tasks. This research demonstrates the potential of LLMs in personalizing robot assistance, achieving 91.2\% accuracy on unseen objects in their benchmark dataset and successfully putting away 85.0\% of objects in real-world test scenarios.
 
-In the realm of education, \cite{shu2024llmscodingroboticseducation} explored the use of LLMs for robot code explanation, generation, and modification in teaching coding to children. Their work highlighted the superior performance of GPT-4V in both traditional coding tasks and robot code generation. In the context of embodied AI, \cite{10.5555/3618408.3618748} proposed PaLM-E, an embodied multimodal language model incorporating real-world sensor data, showcasing its potential in robotic manipulation planning and visual question answering.
-
-% \cite{wu2023autogenenablingnextgenllm} presented AutoGen, a framework for building LLM applications via multi-agent conversations, demonstrating effectiveness in various domains including mathematics and coding. This approach opens up new possibilities for complex problem-solving using LLMs.
-
-% The foundation for LLMs in natural language processing was laid by \citet{DBLP:journals/corr/VaswaniSPUJGKP17} with the introduction of the Transformer architecture. Subsequently, \citet{touvron2023llamaopenefficientfoundation} introduced LLaMA, a collection of foundation language models trained on publicly available datasets, demonstrating competitive performance with proprietary models.
-
-
-
-These advancements in LLM applications for robotics provide a foundation for extending similar techniques to IoT scenarios. The ability to interpret natural language instructions, generate action sequences, and integrate multimodal sensor data holds significant potential for enabling intuitive and intelligent control of IoT devices and systems. As research progresses, we anticipate further innovations in LLM-driven IoT interfaces, potentially revolutionizing how users interact with smart environments.
+While these advancements primarily focus on robotics, they lay a solid foundation for extending similar techniques to IoT scenarios. The ability to interpret natural language instructions, generate action sequences, and integrate multimodal sensor data holds significant potential for enabling intuitive and intelligent control of IoT devices and systems. As research progresses, we anticipate further innovations in LLM-driven IoT interfaces, potentially revolutionizing how users interact with smart environments.
 % -----------------------------------------------------------------------------------------
 
 % \\ TODO: refine this section a bit more 
@@ -168,12 +158,12 @@ In the realm of human-robot interaction, researchers have developed task-oriente
 
 The potential of LLMs in easing chatbot development has been demonstrated through large-scale models that can learn blended conversational skills when provided with appropriate training data and generation strategies \cite{roller-etal-2021-recipes}. These models have shown improvements in multi-turn dialogue engagingness and humanness measurements, paving the way for more sophisticated chatbot applications in various domains, including IoT systems. 
 
-
+\Figure[t!](topskip=0pt, botskip=0pt, midskip=0pt)[width=\textwidth]{{figures/fig1-ab.png}}
+{ \textbf{Overall architecture of Vega alongside a simple example.}\label{fig1}}
 \section{Methodology}
 \label{sec:methodology}
 \subsection{Overall Architecture}
-\Figure[t!](topskip=0pt, botskip=0pt, midskip=0pt)[width=\textwidth]{{figures/fig1-ab.png}}
-{ \textbf{Overall architecture of Vega alongside a simple example.}\label{fig1}}
+
 
 The architecture of the Vega system follows key principles of software design to ensure scalability, maintainability, and robustness \cite{taylor2010software}. The system adopts a modular approach, dividing functionality into distinct components with specific purposes. This design promotes code reuse, facilitates testing, and enhances overall maintenance. The architecture also implements separation of concerns, where different aspects such as user interface, core functionality, and data management are segregated into distinct layers, improving code organization and enabling independent development.
 
@@ -326,13 +316,13 @@ Table \ref{table1} presents the devices defined in the Control Server, categoriz
         \hline
     \end{tabular}
 \end{table}
-
-% // TODO: mention how this is a great alternative to code generation 
-The Control Server exposes a set of defined functions, listed in Table \ref{table2}, which the LLM utilizes to determine logic and execute commands on circuit components. These functions are accessible to the LLM through the "get-functions" REST API endpoint. To execute a particular function, the LLM passes the function identifier and required parameters to the web application logic, which then invokes the "run-function" API endpoint. 
-
 \Figure[t!](topskip=0pt, botskip=0pt,
 midskip=0pt)[width=\textwidth]{{figures/fig9.png}}
 { \textbf{Webapp user interface implementation}\label{fig4}}
+% // TODO: mention how this is a great alternative to code generation 
+The Control Server exposes a set of defined functions, listed in Table \ref{table2}, which the LLM utilizes to determine logic and execute commands on circuit components. These functions are accessible to the LLM through the "get-functions" REST API endpoint. To execute a particular function, the LLM passes the function identifier and required parameters to the web application logic, which then invokes the "run-function" API endpoint. 
+
+
 
 The choice of REST API over alternative protocols such as MQTT was based on several factors. REST offers simplicity, scalability, and statelessness, making it well-suited for web-based applications \cite{s21206904}. It also provides a uniform interface, enabling easier integration with various client applications. While MQTT excels in low-bandwidth, high-latency environments, the current system architecture prioritizes the flexibility and widespread support offered by REST APIs in web development ecosystems.
 
@@ -350,12 +340,14 @@ This architecture facilitates a modular and extensible system, allowing for easy
 % // TODO: is this clear enough?
 The web application forms the core of the Vega platform, initiating all LLM processing and circuit manipulation tasks. Its architecture is modular, separating the User Interface (VegaChat) from the App Logic (VegaAi). The User Interface shown in Figure \ref{fig4} comprises a Top Bar with RPi connection management and configuration options, and a Chat UI displaying LLM responses and user messages. A Chat History UI manages previous interactions. The App Logic includes Data Management, RPi Bridge, and LLM Agents components, handling data entities, RPi communication, and LLM processing respectively.
 
-% // TODO: Maybe expand a bit more
-The UI design prioritizes usability, drawing inspiration from established chatbot interfaces \cite{OpenAI_GPT}. It features a sidebar for chat history, a top bar for configurations, and a main chat area. An automated mode facilitates efficient testing for advanced users while maintaining simplicity for novices. The interface incorporates a Markdown renderer to appropriately display formatted text generated by the LLM.
-
 \Figure[t!](topskip=0pt, botskip=0pt,
 midskip=0pt)[width=\textwidth]{{figures/fig13-refined.png}}
 { \textbf{Webapp logic design}\label{fig5}}
+
+
+% // TODO: Maybe expand a bit more
+The UI design prioritizes usability, drawing inspiration from established chatbot interfaces \cite{OpenAI_GPT}. It features a sidebar for chat history, a top bar for configurations, and a main chat area. An automated mode facilitates efficient testing for advanced users while maintaining simplicity for novices. The interface incorporates a Markdown renderer to appropriately display formatted text generated by the LLM.
+
 
 The platform supports various data types and formats to enhance user interaction. It can display GPS data as maps, sensor readings as plots, and camera module output as images. Additionally, it visualizes LLM-generated plans as flow charts. This versatility allows the interface to accommodate diverse IoT devices and sensors, presenting their data in intuitive, visual formats.
 
@@ -382,6 +374,11 @@ Figure 5 illustrates the system's workflow, demonstrating how user commands are 
 midskip=0pt)[width=0.99\columnwidth]{{figures/fig12.png}}
 { \textbf{Execution of the LLM Chat Agent}\label{fig6}}
 
+\Figure[t!](topskip=0pt, botskip=0pt,
+midskip=0pt)[width=\textwidth]{{figures/fig30.png}}
+{ \textbf{System case studies}\label{fig7}}
+
+
 The system employs three main LLM agents: Chat, Planning, and Image. The LLM Chat Agent, as depicted in Figure 6, operates in two scenarios. In a normal chat scenario, it processes user input and generates a textual response. In a function call scenario, it recognizes the need for a hardware action and outputs a JSON-formatted function call for the RPi.
 
 This approach of using LLM agents for command interpretation and execution offers several advantages over traditional code generation methods. It enhances scalability and adaptability, allowing for easy integration of new sensors and data types without significant system modifications \cite{yang2023autogptonlinedecisionmaking}. Additionally, it improves system security by limiting direct code execution on the RPi, instead relying on predefined functions interpreted by the LLM.
@@ -400,10 +397,9 @@ This approach of using LLM agents for command interpretation and execution offer
 \section{Experiment and Results}
 \label{sec:experiment}
 
+
 \subsection{Complex Commands In Action}
-\Figure[t!](topskip=0pt, botskip=0pt,
-midskip=0pt)[width=\textwidth]{{figures/fig30.png}}
-{ \textbf{System case studies}\label{fig6}}
+
 
 
 \subsection{Automated Evaluation}
@@ -460,66 +456,66 @@ midskip=0pt)[scale=0.38]{{figures/fig35.png}}
 \bibliographystyle{unsrt}
 \bibliography{refs}
 
-\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{author1.png}}]{Harith Al-Safi} received the BEng industrial degree in Electronics and Computer Engineering from
-    the University of Leeds, Leeds, in 2024. From 2022 to 2023, he was an IoT Software Engineer at Johnson Controls. He is currently pursuing a Graduate Software Developer role at BT Group. His research interests include IoT, embedded systems, and machine learning.
-\end{IEEEbiography}
+% \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{author1.png}}]{Harith Al-Safi} received the BEng industrial degree in Electronics and Computer Engineering from
+%     the University of Leeds, Leeds, in 2024. From 2022 to 2023, he was an IoT Software Engineer at Johnson Controls. He is currently pursuing a Graduate Software Developer role at BT Group. His research interests include IoT, embedded systems, and machine learning.
+% \end{IEEEbiography}
 
-\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{author2.png}}]{Second
-        B. Author} (M'76--SM'81--F'87) and all authors may include
-    biographies. Biographies are often not included in conference-related
-    papers. This author became a Member (M) of IEEE in 1976, a Senior
-    Member (SM) in 1981, and a Fellow (F) in 1987. The first paragraph may
-    contain a place and/or date of birth (list place, then date). Next,
-    the author's educational background is listed. The degrees should be
-    listed with type of degree in what field, which institution, city,
-    state, and country, and year the degree was earned. The author's major
-    field of study should be lower-cased.
+% \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{author2.png}}]{Second
+%         B. Author} (M'76--SM'81--F'87) and all authors may include
+%     biographies. Biographies are often not included in conference-related
+%     papers. This author became a Member (M) of IEEE in 1976, a Senior
+%     Member (SM) in 1981, and a Fellow (F) in 1987. The first paragraph may
+%     contain a place and/or date of birth (list place, then date). Next,
+%     the author's educational background is listed. The degrees should be
+%     listed with type of degree in what field, which institution, city,
+%     state, and country, and year the degree was earned. The author's major
+%     field of study should be lower-cased.
 
-    The second paragraph uses the pronoun of the person (he or she) and not the
-    author's last name. It lists military and work experience, including summer
-    and fellowship jobs. Job titles are capitalized. The current job must have
-    a
-    location; previous positions may be listed
-    without one. Information concerning previous publications may be included.
-    Try not to list more than three books or published articles. The format for
-    listing publishers of a book within the biography is: title of book
-    (publisher name, year) similar to a reference. Current and previous
-    research
-    interests end the paragraph.
+%     The second paragraph uses the pronoun of the person (he or she) and not the
+%     author's last name. It lists military and work experience, including summer
+%     and fellowship jobs. Job titles are capitalized. The current job must have
+%     a
+%     location; previous positions may be listed
+%     without one. Information concerning previous publications may be included.
+%     Try not to list more than three books or published articles. The format for
+%     listing publishers of a book within the biography is: title of book
+%     (publisher name, year) similar to a reference. Current and previous
+%     research
+%     interests end the paragraph.
 
-    The third paragraph begins with the author's
-    title and last name (e.g., Dr.\ Smith, Prof.\ Jones, Mr.\ Kajor, Ms.\
-    Hunter).
-    List any memberships in professional societies other than the IEEE.
-    Finally,
-    list any awards and work for IEEE committees and publications. If a
-    photograph is provided, it should be of good quality, and
-    professional-looking. Following are two examples of an author's biography.
-\end{IEEEbiography}
+%     The third paragraph begins with the author's
+%     title and last name (e.g., Dr.\ Smith, Prof.\ Jones, Mr.\ Kajor, Ms.\
+%     Hunter).
+%     List any memberships in professional societies other than the IEEE.
+%     Finally,
+%     list any awards and work for IEEE committees and publications. If a
+%     photograph is provided, it should be of good quality, and
+%     professional-looking. Following are two examples of an author's biography.
+% \end{IEEEbiography}
 
-\newpage
+% \newpage
 
 %If you do not have or do not want to include a photo, you can use IEEEbiographynophoto as shown below:
 
-\begin{IEEEbiographynophoto}{Third C. Author, Jr.} (M'87) received the B.S.
-    degree in mechanical
-    engineering from National Chung Cheng University, Chiayi, Taiwan, in 2004
-    and the M.S. degree in mechanical engineering from National Tsing Hua
-    University, Hsinchu, Taiwan, in 2006. He is currently pursuing the Ph.D.
-    degree in mechanical engineering at Texas A{\&}M University, College
-    Station, TX, USA.
+% \begin{IEEEbiographynophoto}{Third C. Author, Jr.} (M'87) received the B.S.
+%     degree in mechanical
+%     engineering from National Chung Cheng University, Chiayi, Taiwan, in 2004
+%     and the M.S. degree in mechanical engineering from National Tsing Hua
+%     University, Hsinchu, Taiwan, in 2006. He is currently pursuing the Ph.D.
+%     degree in mechanical engineering at Texas A{\&}M University, College
+%     Station, TX, USA.
 
-    From 2008 to 2009, he was a Research Assistant with the Institute of
-    Physics, Academia Sinica, Tapei, Taiwan. His research interest includes the
-    development of surface processing and biological/medical treatment
-    techniques using nonthermal atmospheric pressure plasmas, fundamental study
-    of plasma sources, and fabrication of micro- or nanostructured surfaces.
+%     From 2008 to 2009, he was a Research Assistant with the Institute of
+%     Physics, Academia Sinica, Tapei, Taiwan. His research interest includes the
+%     development of surface processing and biological/medical treatment
+%     techniques using nonthermal atmospheric pressure plasmas, fundamental study
+%     of plasma sources, and fabrication of micro- or nanostructured surfaces.
 
-    Mr. Author's awards and honors include the Frew Fellowship (Australian
-    Academy of Science), the I. I. Rabi Prize (APS), the European Frequency and
-    Time Forum Award, the Carl Zeiss Research Award, the William F. Meggers
-    Award and the Adolph Lomb Medal (OSA).
-\end{IEEEbiographynophoto}
+%     Mr. Author's awards and honors include the Frew Fellowship (Australian
+%     Academy of Science), the I. I. Rabi Prize (APS), the European Frequency and
+%     Time Forum Award, the Carl Zeiss Research Award, the William F. Meggers
+%     Award and the Adolph Lomb Medal (OSA).
+% \end{IEEEbiographynophoto}
 
 \EOD
 

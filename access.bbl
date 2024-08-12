@@ -68,24 +68,6 @@ Maanak Gupta, Charankumar Akiri, Kshitiz Aryal, Eli Parker, and Lopamudra
   and privacy.
 \newblock {\em IEEE Access}, 11:80218--80245, 2023.
 
-\bibitem{10466545}
-Fredrik Heiding, Bruce Schneier, Arun Vishwanath, Jeremy Bernstein, and
-  Peter~S. Park.
-\newblock Devising and detecting phishing emails using large language models.
-\newblock {\em IEEE Access}, 12:42131--42146, 2024.
-
-\bibitem{10235949}
-Naoki Wake, Atsushi Kanehira, Kazuhiro Sasabuchi, Jun Takamatsu, and Katsushi
-  Ikeuchi.
-\newblock Chatgpt empowered long-step robot control in various environments: A
-  case application.
-\newblock {\em IEEE Access}, 11:95060--95078, 2023.
-
-\bibitem{10500490}
-Sai~H. Vemprala, Rogerio Bonatti, Arthur Bucker, and Ashish Kapoor.
-\newblock Chatgpt for robotics: Design principles and model abilities.
-\newblock {\em IEEE Access}, 12:55682--55696, 2024.
-
 \bibitem{Singh2023}
 Ishika Singh, Valts Blukis, Arsalan Mousavian, Ankit Goyal, Danfei Xu, Jonathan
   Tremblay, Dieter Fox, Jesse Thomason, and Animesh Garg.
@@ -93,18 +75,15 @@ Ishika Singh, Valts Blukis, Arsalan Mousavian, Ankit Goyal, Danfei Xu, Jonathan
   large language models.
 \newblock {\em Autonomous Robots}, 47(8):999--1012, Dec 2023.
 
-\bibitem{DeChant2023}
-Chad DeChant, Iretiayo Akinola, and Daniel Bauer.
-\newblock Learning to summarize and answer questions about a virtual robot's
-  past actions.
-\newblock {\em Autonomous Robots}, 47(8):1103--1118, Dec 2023.
-
-\bibitem{Ding2023}
-Yan Ding, Xiaohan Zhang, Saeid Amiri, Nieqing Cao, Hao Yang, Andy Kaminski,
-  Chad Esselink, and Shiqi Zhang.
-\newblock Integrating action knowledge and llms for task planning and situation
-  handling in open worlds.
-\newblock {\em Autonomous Robots}, 47(8):981--997, Dec 2023.
+\bibitem{10.5555/3618408.3618748}
+Danny Driess, Fei Xia, Mehdi S.~M. Sajjadi, Corey Lynch, Aakanksha Chowdhery,
+  Brian Ichter, Ayzaan Wahid, Jonathan Tompson, Quan Vuong, Tianhe Yu, Wenlong
+  Huang, Yevgen Chebotar, Pierre Sermanet, Daniel Duckworth, Sergey Levine,
+  Vincent Vanhoucke, Karol Hausman, Marc Toussaint, Klaus Greff, Andy Zeng,
+  Igor Mordatch, and Pete Florence.
+\newblock Palm-e: an embodied multimodal language model.
+\newblock In {\em Proceedings of the 40th International Conference on Machine
+  Learning}, ICML'23. JMLR.org, 2023.
 
 \bibitem{kannan2024smartllmsmartmultiagentrobot}
 Shyam~Sundar Kannan, Vishnunandan L.~N. Venkatesh, and Byung-Cheol Min.
@@ -116,27 +95,6 @@ Jimmy Wu, Rika Antonova, Adam Kan, Marion Lepert, Andy Zeng, Shuran Song,
   Jeannette Bohg, Szymon Rusinkiewicz, and Thomas Funkhouser.
 \newblock Tidybot: personalized robot assistance with large language models.
 \newblock {\em Autonomous Robots}, 47(8):1087--1102, Dec 2023.
-
-\bibitem{wang2024gensimgeneratingroboticsimulation}
-Lirui Wang, Yiyang Ling, Zhecheng Yuan, Mohit Shridhar, Chen Bao, Yuzhe Qin,
-  Bailin Wang, Huazhe Xu, and Xiaolong Wang.
-\newblock Gensim: Generating robotic simulation tasks via large language
-  models, 2024.
-
-\bibitem{shu2024llmscodingroboticseducation}
-Peng Shu, Huaqin Zhao, Hanqi Jiang, Yiwei Li, Shaochen Xu, Yi~Pan, Zihao Wu,
-  Zhengliang Liu, Guoyu Lu, Le~Guan, Gong Chen, and Xianqiao Wang~Tianming Liu.
-\newblock Llms for coding and robotics education, 2024.
-
-\bibitem{10.5555/3618408.3618748}
-Danny Driess, Fei Xia, Mehdi S.~M. Sajjadi, Corey Lynch, Aakanksha Chowdhery,
-  Brian Ichter, Ayzaan Wahid, Jonathan Tompson, Quan Vuong, Tianhe Yu, Wenlong
-  Huang, Yevgen Chebotar, Pierre Sermanet, Daniel Duckworth, Sergey Levine,
-  Vincent Vanhoucke, Karol Hausman, Marc Toussaint, Klaus Greff, Andy Zeng,
-  Igor Mordatch, and Pete Florence.
-\newblock Palm-e: an embodied multimodal language model.
-\newblock In {\em Proceedings of the 40th International Conference on Machine
-  Learning}, ICML'23. JMLR.org, 2023.
 
 \bibitem{10.1145/3643505}
 Evan King, Haoxiang Yu, Sangsu Lee, and Christine Julien.
