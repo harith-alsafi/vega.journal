@@ -1,14 +1,14 @@
 # Fdb version 3
-["bibtex access"] 1723301822 "access.aux" "access.bbl" "access" 1723301834
+["bibtex access"] 1723474139 "access.aux" "access.bbl" "access" 1723477196
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/unsrt.bst" 1292289607 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "access.aux" 1723301833 9805 525c7d2fa11d3777141fd20d61bcdb66 "pdflatex"
+  "access.aux" 1723477196 9902 2a961329c6c3f11992ef0b6c01dd04ff "pdflatex"
   "refs.bib" 1723051596 73718 b507eadba5d76f8346b2ec92122b36cc ""
   (generated)
   "access.bbl"
   "access.blg"
-["pdflatex"] 1723301822 "/mnt/a/Education/University/journals/vega-acm/ieee-access/latex-template/access.tex" "access.pdf" "access" 1723301834
+["pdflatex"] 1723477184 "/mnt/a/Education/University/journals/vega-acm/ieee-access/latex-template/access.tex" "access.pdf" "access" 1723477196
   "/etc/texmf/web2c/texmf.cnf" 1717511932 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/mnt/a/Education/University/journals/vega-acm/ieee-access/latex-template/access.tex" 1723301794 42311 2891bd388d27e6b660ba2435895bf85a ""
+  "/mnt/a/Education/University/journals/vega-acm/ieee-access/latex-template/access.tex" 1723477180 45895 1fb8fa6189b74ef5543296bcd8322dc4 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmbi7t.tfm" 1136768653 2228 e564491c42a4540b5ebb710a75ff306c ""
@@ -87,9 +87,9 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1717513471 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1717513544 2799341 ec2c79d1675855d2724e83f3a59284c5 ""
   "IEEEtran.cls" 1719858799 281957 5b2e4fa15b0f7eabb840ebf67df4c0f7 ""
-  "access.aux" 1723301833 9805 525c7d2fa11d3777141fd20d61bcdb66 "pdflatex"
-  "access.bbl" 1723301822 12313 1a538137392975ba6015c6c0f28d490a "bibtex access"
-  "access.tex" 1723301794 42311 2891bd388d27e6b660ba2435895bf85a ""
+  "access.aux" 1723477196 9902 2a961329c6c3f11992ef0b6c01dd04ff "pdflatex"
+  "access.bbl" 1723474139 12488 8b061b8aa8401138c08b521a0747f31f "bibtex access"
+  "access.tex" 1723477180 45895 1fb8fa6189b74ef5543296bcd8322dc4 ""
   "author1.png" 1719858799 76281 f20b8ad7c96c271f360935dee50ab68f ""
   "author2.png" 1719858799 100255 3b37cf91d30185b5f431edc22a0c4742 ""
   "bullet.png" 1719858799 430 e52d8fe748259de33fa611fdd6a099c1 ""

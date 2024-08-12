@@ -363,11 +363,36 @@ The platform supports various data types and formats to enhance user interaction
 By leveraging OpenAI's API, the application accesses LLM capabilities without the substantial computational overhead of local hosting \cite{kim2024llmemestimatinggpumemory}. This design choice enhances the platform's accessibility and scalability, enabling its deployment across a wide range of devices and use cases in IoT and embedded systems development.
 
 
-\subsection{Web App LLM Logic}
+\subsection{Web App Logic}
+The Application Logic component serves as the core operational engine of the Vega system, managing communication with the RPi Control Server and integrating LLM's for natural language processing and command interpretation. This component acts as a bridge between external elements, orchestrating the flow of information and translating user input into appropriate actions within the system architecture \cite{bass2003software}.
 
-\Figure[b!](topskip=0pt, botskip=0pt,
+To establish a connection between the web application and the RPi, the user provides the IP address and port number of the RPi running the Control Server. The web application then initiates concurrent API calls to fetch circuit functions and device information from the Control Server. Upon receiving responses, the connection state is updated, synchronizing the "Raspi Devices" and "Raspi Functions" states which are fed to the LLM.
+
+Figure 5 illustrates the system's workflow, demonstrating how user commands are processed through various stages involving LLM agents. When a user inputs a natural language command (e.g., "turn on red LED and capture image"), the system follows these steps:
+
+\begin{enumerate}
+    \item The LLM Planning Agent generates a flowchart visualizing the planned steps.
+    \item The Stateless LLM Chat Agent processes the message and determines if a function call to the RPi is necessary.
+    \item If required, the function is executed on the RPi, which returns a response.
+    \item For image data, the Stateless LLM Image Agent analyzes and generates a description.
+    \item Results are displayed on the web application's UI, providing feedback to the user.
+\end{enumerate}
+
+\Figure[b!](topskip=-10pt, botskip=0pt,
 midskip=0pt)[width=0.99\columnwidth]{{figures/fig12.png}}
 { \textbf{Execution of the LLM Chat Agent}\label{fig6}}
+
+The system employs three main LLM agents: Chat, Planning, and Image. The LLM Chat Agent, as depicted in Figure 6, operates in two scenarios. In a normal chat scenario, it processes user input and generates a textual response. In a function call scenario, it recognizes the need for a hardware action and outputs a JSON-formatted function call for the RPi.
+
+This approach of using LLM agents for command interpretation and execution offers several advantages over traditional code generation methods. It enhances scalability and adaptability, allowing for easy integration of new sensors and data types without significant system modifications \cite{yang2023autogptonlinedecisionmaking}. Additionally, it improves system security by limiting direct code execution on the RPi, instead relying on predefined functions interpreted by the LLM.
+
+% The modular design of the system facilitates the incorporation of additional agents, such as those handling voice or video input, extending the system's capabilities to encompass audio and visual recognition functionalities. This flexibility allows for future expansions without major architectural changes.
+
+% The App Logic module ensures that changes are rendered directly onto the User Interface, maintaining a consistent global state represented by the "Message History." This state is continuously supplied to the LLM during each execution cycle, enabling it to make informed decisions based on the system's current status and previous interactions.
+
+% By leveraging LLMs for IoT control, Vega bridges the gap between complex device functionality and user-friendly interaction. This approach not only enhances accessibility for non-technical users but also opens new avenues for creative and intelligent IoT applications in diverse settings such as smart homes, industrial monitoring, and educational environments.
+
+
 
 
 

@@ -304,4 +304,9 @@ Taeho Kim, Yanming Wang, Vatshank Chaturvedi, Lokesh Gupta, Seyeon Kim, Yongin
 \newblock Llmem: Estimating gpu memory usage for fine-tuning pre-trained llms,
   2024.
 
+\bibitem{yang2023autogptonlinedecisionmaking}
+Hui Yang, Sifu Yue, and Yunzhong He.
+\newblock Auto-gpt for online decision making: Benchmarks and additional
+  opinions, 2023.
+
 \end{thebibliography}

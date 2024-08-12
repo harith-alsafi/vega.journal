@@ -573,6 +573,7 @@ INPUT ./notaglinelogo.png
 INPUT ./notaglinelogo.png
 INPUT notaglinelogo.png
 INPUT ./notaglinelogo.png
+INPUT t1-times-bold.tfm
 INPUT ./figures/fig12.png
 INPUT ./figures/fig12.png
 INPUT figures/fig12.png
@@ -582,6 +583,10 @@ INPUT ./figures/fig12.png
 INPUT ./figures/fig12.png
 INPUT figures/fig12.png
 INPUT ./figures/fig12.png
+INPUT ./notaglinelogo.png
+INPUT ./notaglinelogo.png
+INPUT notaglinelogo.png
+INPUT ./notaglinelogo.png
 INPUT ./figures/fig30.png
 INPUT ./figures/fig30.png
 INPUT figures/fig30.png
@@ -677,10 +682,6 @@ INPUT ./notaglinelogo.png
 INPUT ./notaglinelogo.png
 INPUT notaglinelogo.png
 INPUT ./notaglinelogo.png
-INPUT ./notaglinelogo.png
-INPUT ./notaglinelogo.png
-INPUT notaglinelogo.png
-INPUT ./notaglinelogo.png
 INPUT ./author1.png
 INPUT ./author1.png
 INPUT author1.png
@@ -705,6 +706,10 @@ INPUT ./author2.png
 INPUT ./author2.png
 INPUT author2.png
 INPUT ./author2.png
+INPUT ./notaglinelogo.png
+INPUT ./notaglinelogo.png
+INPUT notaglinelogo.png
+INPUT ./notaglinelogo.png
 INPUT ./bullet.png
 INPUT ./bullet.png
 INPUT bullet.png
