@@ -61,12 +61,10 @@ Paula Maddigan and Teo Susnjak.
   chatgpt, codex and gpt-3 large language models.
 \newblock {\em IEEE Access}, 11:45181--45193, 2023.
 
-\bibitem{10198233}
-Maanak Gupta, Charankumar Akiri, Kshitiz Aryal, Eli Parker, and Lopamudra
-  Praharaj.
-\newblock From chatgpt to threatgpt: Impact of generative ai in cybersecurity
-  and privacy.
-\newblock {\em IEEE Access}, 11:80218--80245, 2023.
+\bibitem{10500490}
+Sai~H. Vemprala, Rogerio Bonatti, Arthur Bucker, and Ashish Kapoor.
+\newblock Chatgpt for robotics: Design principles and model abilities.
+\newblock {\em IEEE Access}, 12:55682--55696, 2024.
 
 \bibitem{Singh2023}
 Ishika Singh, Valts Blukis, Arsalan Mousavian, Ankit Goyal, Danfei Xu, Jonathan
@@ -181,11 +179,6 @@ Satish Bhosale, Miss Patil, and Pooja Patil.
 \newblock {\em International Journal of Computer Science and Mobile Computing},
   44:882--885, 04 2015.
 
-\bibitem{sqliteapplication}
-Chunyue Bi.
-\newblock Research and application of sqlite embedded database technology.
-\newblock {\em WSEAS Transactions on Computers}, 8:83--92, 01 2009.
-
 \bibitem{math9040308}
 Evgeny Nikulchev, Dmitry Ilin, and Alexander Gusev.
 \newblock Technology stack selection model for software design of digital
@@ -206,6 +199,10 @@ WorkOS.
 \bibitem{tailwindcss}
 Tailwind Labs.
 \newblock {\em Tailwind CSS}, 2023.
+
+\bibitem{NextJS}
+Vercel.
+\newblock {\em Next.js Documentation}, 2024.
 
 \bibitem{Flask2024}
 Armin Ronacher.
@@ -266,5 +263,64 @@ Taeho Kim, Yanming Wang, Vatshank Chaturvedi, Lokesh Gupta, Seyeon Kim, Yongin
 Hui Yang, Sifu Yue, and Yunzhong He.
 \newblock Auto-gpt for online decision making: Benchmarks and additional
   opinions, 2023.
+
+\bibitem{pressman2020software}
+Roger~S. Pressman.
+\newblock {\em Software Engineering: A Practitioner's Approach}.
+\newblock McGraw-Hill, New York, NY, 9th edition, 2020.
+
+\bibitem{wang2024gensimgeneratingroboticsimulation}
+Lirui Wang, Yiyang Ling, Zhecheng Yuan, Mohit Shridhar, Chen Bao, Yuzhe Qin,
+  Bailin Wang, Huazhe Xu, and Xiaolong Wang.
+\newblock Gensim: Generating robotic simulation tasks via large language
+  models, 2024.
+
+\bibitem{shu2024llmscodingroboticseducation}
+Peng Shu, Huaqin Zhao, Hanqi Jiang, Yiwei Li, Shaochen Xu, Yi~Pan, Zihao Wu,
+  Zhengliang Liu, Guoyu Lu, Le~Guan, Gong Chen, and Xianqiao Wang~Tianming Liu.
+\newblock Llms for coding and robotics education, 2024.
+
+\bibitem{1553657}
+M.~John, F.~Maurer, and B.~Tessem.
+\newblock Human and social factors of software engineering.
+\newblock In {\em 27th International Conference on Software Engineering}, page
+  686, Los Alamitos, CA, USA, may 2005. IEEE Computer Society.
+
+\bibitem{10.1145/3610977.3634966}
+Callie~Y. Kim, Christine~P. Lee, and Bilge Mutlu.
+\newblock Understanding large-language model (llm)-powered human-robot
+  interaction.
+\newblock In {\em Proceedings of the 2024 ACM/IEEE International Conference on
+  Human-Robot Interaction}, HRI '24, page 371–380, New York, NY, USA, 2024.
+  Association for Computing Machinery.
+
+\bibitem{1290484}
+M.A. Babar, L.~Zhu, and R.~Jeffery.
+\newblock A framework for classifying and comparing software architecture
+  evaluation methods.
+\newblock In {\em 2004 Australian Software Engineering Conference.
+  Proceedings.}, pages 309--318, 2004.
+
+\bibitem{rum2024setting}
+Ruman.
+\newblock Setting top-k, top-p and temperature in llms.
+\newblock
+  https://rumn.medium.com/setting-top-k-top-p-and-temperature-in-llms-3da3a8f74832,
+  2024.
+\newblock Accessed: 19 August 2024.
+
+\bibitem{Ding2023}
+Yan Ding, Xiaohan Zhang, Saeid Amiri, Nieqing Cao, Hao Yang, Andy Kaminski,
+  Chad Esselink, and Shiqi Zhang.
+\newblock Integrating action knowledge and llms for task planning and situation
+  handling in open worlds.
+\newblock {\em Autonomous Robots}, 47(8):981--997, Dec 2023.
+
+\bibitem{10198233}
+Maanak Gupta, Charankumar Akiri, Kshitiz Aryal, Eli Parker, and Lopamudra
+  Praharaj.
+\newblock From chatgpt to threatgpt: Impact of generative ai in cybersecurity
+  and privacy.
+\newblock {\em IEEE Access}, 11:80218--80245, 2023.
 
 \end{thebibliography}

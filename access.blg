@@ -3,46 +3,44 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: access.aux
 The style file: unsrt.bst
 Database file #1: refs.bib
-Warning--I didn't find a database entry for "bass2003software"
-You've used 45 entries,
+You've used 54 entries,
             1791 wiz_defined-function locations,
-            688 strings with 12210 characters,
-and the built_in function-call counts, 10950 in all, are:
-= -- 853
-> -- 664
-< -- 5
-+ -- 239
-- -- 194
-* -- 807
-:= -- 1788
-add.period$ -- 131
-call.type$ -- 45
-change.case$ -- 37
+            729 strings with 13916 characters,
+and the built_in function-call counts, 13315 in all, are:
+= -- 1043
+> -- 812
+< -- 8
++ -- 292
+- -- 238
+* -- 953
+:= -- 2145
+add.period$ -- 158
+call.type$ -- 54
+change.case$ -- 45
 chr.to.int$ -- 0
-cite$ -- 45
-duplicate$ -- 441
-empty$ -- 1033
-format.name$ -- 194
-if$ -- 2427
+cite$ -- 54
+duplicate$ -- 553
+empty$ -- 1249
+format.name$ -- 238
+if$ -- 2980
 int.to.chr$ -- 0
-int.to.str$ -- 45
-missing$ -- 41
-newline$ -- 221
-num.names$ -- 47
-pop$ -- 140
+int.to.str$ -- 54
+missing$ -- 47
+newline$ -- 264
+num.names$ -- 56
+pop$ -- 186
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 198
+skip$ -- 271
 stack$ -- 0
-substring$ -- 653
-swap$ -- 96
-text.length$ -- 5
+substring$ -- 744
+swap$ -- 142
+text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 76
-width$ -- 47
-write$ -- 477
-(There was 1 warning)
+while$ -- 90
+width$ -- 56
+write$ -- 574

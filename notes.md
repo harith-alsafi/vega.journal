@@ -31,47 +31,33 @@ Sections:
 - Authors (0.25 page)
 - Max pages is 20 thats IT!
 
-Upon submission:
-- Cross references as hyperlinks
-- Payment from craig 
-- Make sure you add links to repos, videos and other data  
-- Check figure names
-- Check references 
-- Check spelling 
-- Check grammer 
-- Check UK/US english 
-- Revise Paul's comments 
-
-TODO:
+todo
+[x] 1.5 line on page 3
+[x] last paragraph on section 3.A
+[x] add a 3 line paragraph on page 4
+[x] few lines on page 8
 [x] pie chart for types of errors that occur during testing
 [x] Finish tables; devices, functions
-[ ] Add tones and metrics in experiment section either as bullet points or table
 [x] Finish figure descriptions
-[ ] Change figure to showcase experiment process
+[x] Change figure to showcase experiment process
 [x] Add figure to showcase real life scenarios
-[ ] Add algorithm for webapp backend
 [x] Change/remove automation figure
 [x] Try out message with different tones (tone 1: success rate, tone 2: success rate)
+[ ] Add tones and metrics in experiment section either as bullet points or table
 [ ] Add link to code
 [ ] Add link to video 
 [ ] Make sure cross refernce is correct 
 [ ] Check figure and table names and description 
 [ ] Check grammer 
 [ ] Check spelling 
-[ ] Check U/US 
+[ ] Check Uk/US 
 [ ] Check acronyms 
 [ ] Check redefinitions
-[ ] Check extra long sections 
-[ ] Look which figures to remove 
 [ ] Check references 
 [ ] Check Paul's
 [ ] Check harith
-[ ] Check craig 
-[ ] Make sure in text refernces are used correct
-
-figs 12, 13
-x-label make it bold
-natural -> conversational 
-robotic -> direct or minimal
-text length instead of tones
-add notes this is specefic to our , wa numbers may vary
+[ ] change bullet points of page 8 
+[ ] change the contribution list 
+[ ] start section IV.A
+[ ] Check todos on code
+[ ] remove repeated refercnces 
