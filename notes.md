@@ -32,6 +32,8 @@ Sections:
 - Max pages is 20 thats IT!
 
 todo
+[ ] Add footnotes for libraries instead of reference 
+[ ] Add reference to definitions of LLM top P and temperature 
 [x] 1.5 line on page 3
 [x] last paragraph on section 3.A
 [x] add a 3 line paragraph on page 4
