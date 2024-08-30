@@ -1,5 +1,6 @@
 \documentclass{ieeeaccess}
 \usepackage{cite}
+\usepackage[numbers]{natbib}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{algorithm,algorithmic}
 \usepackage{graphicx}
@@ -7,7 +8,11 @@
 \usepackage{bm}
 \usepackage{float}
 \usepackage{dblfloatfix}
-\usepackage[hidelinks]{hyperref}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue, filecolor=blue]{hyperref}
+\hypersetup{
+    pdfborder={0 0 0}
+}
+
 \makeatletter
 \AtBeginDocument{\DeclareMathVersion{bold}
     \SetSymbolFont{operators}{bold}{T1}{times}{b}{n}
@@ -39,8 +44,6 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
     Leeds LS2 9JT, U.K}
 \tfootnote{This work was supported in part by the school of Electronics and Electrical Engineering at the University of Leeds.}
 
-
-
 \markboth
 {H. Al-Safi \headeretal: Vega: LLM-driven Intelligent Chatbot Platform for Internet of Things Control and Development}
 {H. Al-Safi \headeretal: Vega: LLM-driven Intelligent Chatbot Platform for Internet of Things Control and Development}
@@ -48,28 +51,8 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \corresp{Corresponding author: Harith Al-Safi (e-mail:
     harith.alsafi@gmail.com).}
 
-% #TODO: make verbs past tense
-% #TODO: alternative word to 'non-technical' users
-% #TODO: (just how significant is this statement - without additional RPi-level coding - seems highly significant useful to me, so do you need to draw more attention to this for the general reader - " ... without additional RPi-level coding, which is highly significant because.. "- and explain very briefly why. Or ... because our findings show that LLM...
-% #TODO: add link to video demo 
 \begin{abstract}
-    Large language models (LLMs) have revolutionized natural language
-    processing (NLP), yet their potential in Internet of Things (IoT) and embedded systems (ESys) applications remains largely untapped. Traditional IoT interfaces often require specialized
-    knowledge, creating barriers for non-technical users. We present Vega a modular
-    system that leverages LLMs to enable intuitive, natural language control and interrogation of IoT devices, specifically a Raspberry Pi (RPi) connected to various sensors, actuators and
-    devices. Our solution comprises three key components: a physical circuit with
-    input and output devices, an RPi integrating a control server, and a web
-    application integrating LLM logic alongside a multi-agent system. Users interact with the system through natural language, which the LLM interprets to remotely call appropriate
-    commands for the RPi. The RPi executes these instructions on the physically connected
-    circuit, with outcomes communicated back to the user via LLM-generated
-    responses. The system's performance is empirically evaluated using a range of
-    task complexities and user scenarios, demonstrating its ability to handle
-    complex, conditional logic without additional coding on the RPi. Our findings
-    reveal that LLM-driven IoT control can effectively bridge the gap between
-    complex device functionality and user-friendly interaction. We discuss the
-    system's scalability, exploring some of its potential applications in diverse settings such as smart homes, industrial monitoring, and educational environments. Key to this significance is that by enabling natural language interaction with IoT devices, our approach not only enhances accessibility for non-technical users but also opens new avenues for
-    creative and intelligent IoT applications. This research offers
-    insights into the design and implementation of LLM-integrated IoT interfaces and is showcased in the following link \url{https://youtu.be/CKV\_\_A8G5Rk}
+    Large language models (LLMs) have revolutionized natural language processing (NLP), yet their potential in Internet of Things (IoT) and embedded systems (ESys) applications remains largely unexplored. Traditional IoT interfaces often require specialized knowledge, creating barriers for non-technical users. We present Vega a modular system that leverages LLMs to enable intuitive, natural language control and interrogation of IoT devices, specifically a Raspberry Pi (RPi) connected to various sensors, actuators and devices. Our solution comprises three key components: a physical circuit with input and output devices, an RPi integrating a control server, and a web application integrating LLM logic using multi-agents. Users interact with the system through natural language, which the LLM interprets to remotely call appropriate commands for the RPi. The RPi executes these instructions on the physically connected circuit, with outcomes communicated back to the user via LLM-generated responses. The system's performance is empirically evaluated using a range of task complexities and user scenarios, demonstrating its ability to handle complex and conditional logic without additional coding on the RPi reducing the need for extensive programming on IoT devices. We showcase the system's real-world applicability through physical circuit implementation, while providing insights into its limitations and potential scalability. Our findings reveal that LLM-driven IoT control can effectively bridge the gap between complex device functionality and user-friendly interaction and also opens new avenues for creative and intelligent IoT applications. This research offers insights into the design and implementation of LLM-integrated IoT interfaces and is showcased in the following link \url{https://youtu.be/CKV\_\_A8G5Rk}
 \end{abstract}
 
 \begin{keywords}
@@ -82,62 +65,59 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
 \section{Introduction}\label{sec:introduction}
 
-Large language models (LLMs) have revolutionized natural language processing, demonstrating unprecedented capabilities in understanding and generating human-like text \cite{10.1145/3641289}. However, their potential in Internet of Things (IoT) and embedded systems (ESys) applications remains largely untapped. IoT systems have become increasingly prevalent across various domains, from smart homes to industrial automation \cite{8355897}. Despite their widespread adoption and security issues notwithstanding, developing and interacting with adaptive IoT systems often requires specialized knowledge and good programming skills, creating significant barriers for new or non-technical users \cite{10.1145/3447526.3472036}.
+Large language models (LLMs) have significantly revolutionized natural language processing (NLP), demonstrating unprecedented capabilities in understanding and generating human-like text \cite{10.1145/3641289}. However, their potential in Internet of Things (IoT) and embedded systems (ESys) applications remains largely untapped. IoT systems have become increasingly prevalent across various domains, from smart homes to industrial automation \cite{8355897}. Despite their widespread adoption and security issues notwithstanding, developing and interacting with adaptive IoT systems often requires specialized knowledge and good programming skills, creating significant barriers for new or non-technical users \cite{10.1145/3447526.3472036}.
 
-Traditional IoT interfaces typically rely on graphical user interfaces (GUIs) or specific programming languages, which can be challenging for users to develop without technical expertise \cite{10.1145/3447526.3472036}. This limitation hinders the widespread adoption and utilization of IoT technologies, particularly in scenarios where rapid deployment and intuitive user interaction are crucial. While research has been conducted on natural language interfaces for IoT, the application of advanced language models to IoT control and interaction remains an underexplored area \cite{KASSAB2020102663}.
+Traditional IoT interfaces typically rely on graphical user interfaces (GUIs) or specific programming languages, which can be challenging for users to develop without technical expertise \cite{10.1145/3447526.3472036}. This limitation hinders the widespread adoption and utilization of IoT technologies, particularly in scenarios where rapid deployment and intuitive user interaction are crucial. While research has been conducted on natural language interfaces for IoT, the application of advanced language models to IoT control and interaction remains an unexplored area \cite{KASSAB2020102663}.
 
-To address these challenges, we propose \textbf{Vega}, an intelligent chatbot platform that leverages LLMs to enable intuitive, natural language control of IoT devices. Our system focuses on a Raspberry Pi (RPi) connected to various sensors and devices as a representative IoT setup. By integrating LLMs with IoT infrastructure, we aim to bridge the gap between complex device functionality and user-friendly interaction, allowing users to control and query IoT systems using everyday language.
+To address these challenges, we propose \textbf{Vega}, an intelligent chatbot platform that leverages LLMs to enable intuitive, natural language control of IoT devices. Our system focuses on a Raspberry Pi (RPi) connected to various sensors and devices as a representative IoT setup. By integrating LLMs with IoT infrastructure, we aim to bridge the gap between complex device functionality and user-friendly interaction, allowing users to control and query IoT systems using everyday language. Our research builds upon recent advancements in LLMs, specifically OpenAI's GPT-based models \cite{OpenAI_GPT}, which utilize transformer neural network architectures to capture context and relationships within text data. By applying these powerful language understanding capabilities to IoT interaction, we aim to create a more accessible and flexible approach to device control and monitoring. Our approach not only enhances accessibility for non-technical users but also opens new avenues for creative and intelligent IoT applications, addressing the standardization challenges highlighted by \citet{7821686}.
 
-Our research builds upon recent advancements in LLMs, specifically OpenAI's GPT-based models \cite{OpenAI_GPT}, which utilize transformer neural network architectures to capture context and relationships within text data. By applying these powerful language understanding capabilities to IoT interaction, we aim to create a more accessible and flexible approach to device control and monitoring. Our approach not only enhances accessibility for non-technical users but also opens new avenues for creative and intelligent IoT applications, addressing the standardization challenges highlighted by Al-Qaseem et al. \cite{7821686}.
+Vega's architecture comprises three key components: a physical circuit with input and output devices, an RPi integrating a control server, and a web application incorporating LLM logic. This modular design allows for flexibility and scalability, enabling the system to adapt to various IoT scenarios and user requirements \cite{taylor2010software}. By utilizing the RPi as a central hub, we can leverage its versatility and widespread adoption in the IoT community \cite{8067944}. The main contributions of this paper are as follows:
 
-Vega's architecture comprises three key components: a physical circuit with input and output devices, an RPi integrating a control server, and a web application incorporating LLM logic. This modular design allows for flexibility and scalability, enabling the system to adapt to various IoT scenarios and user requirements \cite{taylor2010software}. By utilizing the RPi as a central hub, we can leverage its versatility and widespread adoption in the IoT community \cite{8067944}.
 
-The main contributions of this paper are as follows:
-
-% #TODO: maybe mention the web app as one of the contributions, mention multi agent  
 \begin{enumerate}
-    \item We present an exemplar modular architecture that integrates LLMs with IoT systems, specifically designed for natural language interaction with RPi-based setups.
-    \item We develop a novel approach for translating natural language commands into executable instructions for IoT devices, capable of handling complex, conditional logic without additional coding on the RPi.
-    \item We implement and evaluate a generalised prototype system demonstrating the feasibility and effectiveness of LLM-driven IoT control across a range of task complexities and user scenarios.
-    \item We provide insights into the scalability and potential applications of our approach in diverse settings such as smart homes, industrial monitoring, and educational environments.
+\item We developed a chat web app that executes queries on the RPi which contains a control server that manages the execution on a circuit and communication with the web app.
+\item We develop a multi-agent LLM framework that translates natural language commands into executable instructions for IoT devices, capable of handling complex, conditional logic without additional coding on the RPi.
+\item We showcase the system's real-world applicability through physical circuit implementations and provide insights into its limitations and potential scalability.
+\item We implement and evaluate the system demonstrating the feasibility and effectiveness of LLM-driven IoT control across various task complexities and user scenarios, including an evaluation mode with automated test generation and performance assessment.
 \end{enumerate}
 
-The remainder of this paper is organized as follows: Section \ref{sec:background} provides background information and discusses related work in IoT interfaces and natural language processing. Section \ref{sec:methodology} details our methodology, including the overall system architecture, physical circuit design, RPi configuration, and web application implementation. Section \ref{sec:experiment} presents our experimental setup, results, and analysis, showcasing the system's performance in handling complex commands and its potential real-world applications. Finally, Section \ref{sec:conclusion} concludes the paper and outlines directions for future research.
+% \begin{enumerate}
+%     \item We present an exemplar modular framework that integrates LLMs with IoT systems, specifically designed for natural language interaction with RPi-based setups.
+%     \item We develop a novel approach for translating natural language commands into executable instructions for IoT devices, capable of handling complex, conditional logic without additional coding on the RPi.
+%     \item We implement and evaluate a generalised prototype system demonstrating the feasibility and effectiveness of LLM-driven IoT control across a range of task complexities and user scenarios.
+%     \item We provide insights into the limitations and scalability and potential applications of our approach in diverse settings such as smart homes, industrial monitoring, and educational environments.
+% \end{enumerate}
+
+The remainder of this paper is organized as follows: Section \ref{sec:background} provides background information and discusses related work in IoT interfaces and NLP. Section \ref{sec:methodology} details our methodology, including the overall architecture, physical circuit design, RPi configuration, and web application implementation. Section \ref{sec:experiment} presents our experimental setup, results, and analysis, showcasing the system's performance in handling complex commands, its potential real-world applications, its limitations and insight into future research. Finally, Section \ref{sec:conclusion} concludes the paper.
 
 \section{Background and Related Work}\label{sec:background}
 
-% #TODO: I got the impression your approach involved some automated code development - might it be wise to summarise / introduce that here to keep the reader fully engaged
 \subsection{Industrial applications of LLM's}
-LLM's are based on the Transformer architecture \cite{DBLP:journals/corr/VaswaniSPUJGKP17} and has been trained on vast amounts of textual data, have demonstrated remarkable versatility across diverse domains, including robotics, software and IoT applications. 
+LLM's are based on the transformer architecture \cite{DBLP:journals/corr/VaswaniSPUJGKP17} which uses self-attention mechanisms to analyze large sequences of text data, have been effectively applied across diverse domains, including robotics, software and IoT applications. 
 
-Maddiga et al. \cite{10121440} showcased this versatility with Chat2VIS, leveraging ChatGPT and GPT-3 to generate data visualizations from natural language queries. Their innovative approach demonstrated how LLM's could be effectively used to convert free-form natural language directly into visualization code, even when queries were highly misspecified or underspecified. Meanwhile, Gupta et al. Vemprala \cite{10500490} explored the application of LLM's, specifically OpenAI's ChatGPT, in robotics applications. Their research presented a strategy combining prompt engineering principles and a high-level function library, enabling ChatGPT to adapt to various robotics tasks, simulators, and form factors. The study evaluated different prompt engineering techniques and dialog strategies for executing robotics tasks, ranging from basic logical and geometrical reasoning to complex domains like aerial navigation and manipulation.
+\citet{10121440} showcased this versatility with Chat2VIS, leveraging ChatGPT and GPT-3 to generate data visualizations from natural language queries. Their innovative approach demonstrated how LLM's could be effectively used to convert free-form natural language directly into visualization code, even when queries were highly misspecified or underspecified. Meanwhile, \citet{10500490} explored the application of LLM's, specifically OpenAI's ChatGPT, in robotics applications. Their research presented a strategy combining prompt engineering principles and a high-level function library, enabling ChatGPT to adapt to various robotics tasks, simulators, and form factors. The study evaluated different prompt engineering techniques and dialogue strategies for executing robotics tasks, ranging from basic logical and geometrical reasoning to complex domains like aerial navigation and manipulation.
 
-Recent research has explored the integration of LLMs with robotic systems, paving the way for intuitive human-robot interaction. Singh and Blukis \cite{Singh2023} introduced ProgPrompt, a novel approach leveraging LLMs to generate action sequences based on natural language instructions. By prompting LLMs with program-like specifications of available actions and objects, along with example programs, their method enables plan generation across diverse environments, robot capabilities, and tasks. This work demonstrated state-of-the-art success rates in VirtualHome household tasks and was successfully deployed on a physical robot arm for tabletop tasks.
+Recent research has explored the integration of LLMs with robotic systems, paving the way for intuitive human-robot interaction. \citet{Singh2023} introduced ProgPrompt, a novel approach leveraging LLMs to generate action sequences based on natural language instructions. By prompting LLMs with program-like specifications of available actions and objects, along with example programs, their method enables plan generation across diverse environments, robot capabilities, and tasks. This work demonstrated state-of-the-art success rates in VirtualHome household tasks and was successfully deployed on a physical robot arm for tabletop tasks.
 
-Expanding on this concept, Driess et al. \cite{10.5555/3618408.3618748} proposed PaLM-E, an embodied multimodal language model that incorporates real-world sensor data into language models. PaLM-E is trained on tasks such as robotic manipulation planning and visual question answering, exhibiting positive transfer across language, vision, and visual-language domains. This research highlights the potential of LLMs in grounding language understanding in physical environments, a crucial aspect for IoT applications. Grounding connects language to real-world objects and actions; in Vega, it links user commands to IoT device operations, enabling intuitive control.
+Expanding on this concept, \citet{10.5555/3618408.3618748} proposed PaLM-E, an embodied multimodal language model that incorporates real-world sensor data into language models. PaLM-E is trained on tasks such as robotic manipulation planning and visual question answering, exhibiting positive transfer across language, vision, and visual-language domains. This research highlights the potential of LLMs in grounding language understanding in physical environments, a crucial aspect for IoT applications. Grounding connects language to real-world objects and actions; in Vega, it links user commands to IoT device operations, enabling intuitive control.
 
-% #TODO: mention that we have agents 
-In the context of multi-agent systems, Kannan et al. \cite{kannan2024smartllmsmartmultiagentrobot} developed SMART-LLM, a framework for embodied multi-robot task planning. This approach uses LLMs to convert high-level task instructions into multi-robot task plans through a series of stages, including task decomposition, coalition formation, and task allocation. The authors created a benchmark dataset for validating multi-robot task planning problems, demonstrating the framework's effectiveness in both simulated and real-world scenarios. Similarly, in the case of Vega it utalizes multiple agents to handle different scenarios such as task planning, image processing and chat interaction.
+In the context of multi-agent systems, \citet{kannan2024smartllmsmartmultiagentrobot} developed SMART-LLM, a framework for embodied multi-robot task planning. This approach uses LLMs to convert high-level task instructions into multi-robot task plans through a series of stages, including task decomposition, coalition formation, and task allocation. The authors created a benchmark dataset for validating multi-robot task planning problems, demonstrating the framework's effectiveness in both simulated and real-world scenarios. Similarly, in the case of Vega it utilizes multiple agents to handle different scenarios such as task planning, image processing and chat interaction.
 
-Wu et al. \cite{Wu2023} presented TidyBot, a system that combines language-based planning and perception with LLMs to infer generalized user preferences for household cleanup tasks. This research demonstrates the potential of LLMs in personalizing robot assistance, achieving 91.2\% accuracy on unseen objects in their benchmark dataset and successfully putting away 85.0\% of objects in real-world test scenarios.
+\citet{Wu2023} presented TidyBot, a system that combines language-based planning and perception with LLMs to infer generalized user preferences for household clean-up tasks. This research demonstrates the potential of LLMs in personalizing robot assistance, achieving 91.2\% accuracy on unseen objects in their benchmark dataset and successfully putting away 85.0\% of objects in real-world test scenarios.
 
-% #TODO: look into this paragraph 
 While these advancements primarily focus on robotics, they lay a solid foundation for extending similar techniques to IoT scenarios. The ability to interpret natural language instructions, generate action sequences, and integrate multimodal sensor data holds significant potential for enabling intuitive and intelligent control of IoT devices and systems. As research progresses, we anticipate further innovations in LLM-driven IoT interfaces, potentially revolutionizing how users interact with smart environments.
-% -----------------------------------------------------------------------------------------
 
-% \\ TODO: refine this section a bit more 
 \subsection{Natural Language Processing for IoT}
-Natural Language Processing (NLP) has emerged as a transformative technology in IoT applications, enabling intuitive human-machine interactions. The integration of NLP in IoT systems allows users to instruct, control and query devices using everyday language, bridging the gap between complex technological interfaces and user-friendly experiences \cite{10.1145/3643505}. This integration is particularly crucial as IoT devices become ubiquitous in various domains, from smart homes to industrial settings, where ease of use and accessibility are paramount.
+NLP has emerged as a transformative technology in IoT applications, enabling intuitive human-machine interactions. The integration of NLP in IoT systems allows users to instruct, control and query devices using everyday language, bridging the gap between complex technological interfaces and user-friendly experiences \cite{10.1145/3643505}. This integration is particularly crucial as IoT devices become ubiquitous in various domains, from smart homes to industrial settings, where ease of use and accessibility are paramount.
 
-Recent research has demonstrated the potential of NLP in IoT contexts. For instance, Petrović et al. explored the use of ChatGPT in IoT systems, focusing on Arduino-based applications \cite{10315791}. Their work highlighted the possibilities of leveraging LLMs for both question-answering and automated code generation in IoT environments. Similarly, Zhong et al. proposed CASIT, a collective intelligent agent system for IoT that utilizes LLMs to process and interpret data from multiple sources efficiently \cite{10439991}. These studies underscore the growing interest in applying advanced NLP techniques to enhance IoT functionality, operability and user experience.
+Recent research has demonstrated the potential of NLP in IoT contexts. For instance, \citet{10315791} explored the use of ChatGPT in IoT systems, focusing on Arduino-based applications. Their work highlighted the possibilities of leveraging LLMs for both question-answering and automated code generation in IoT environments. Similarly, \citet{10439991} proposed CASIT, a collective intelligent agent system for IoT that utilizes LLMs to process and interpret data from multiple sources efficiently. These studies underscore the growing interest in applying advanced NLP techniques to enhance IoT functionality, operability and user experience.
 
-The integration of LLMs represents a very significant advancement in NLP capabilities for IoT. Traditional NLP methods often struggle with context understanding and complex query interpretation, limitations that LLMs can overcome. LLMs offer improved natural language understanding, enabling more nuanced and context-aware interactions with IoT devices. For example, King et al. demonstrated how LLMs can interpret ill defined and under-specified commands in smart home environments, translating vague user intentions into specific device actions \cite{10.1145/3643505}.
+The integration of LLMs represents a very significant advancement in NLP capabilities for IoT. Traditional NLP methods often struggle with context understanding and complex query interpretation, limitations that LLMs can overcome. LLMs offer improved natural language understanding, enabling more nuanced and context-aware interactions with IoT devices. For example, \citet{10.1145/3643505} demonstrated how LLMs can interpret ill defined and under-specified commands in smart home environments, translating vague user intentions into specific device actions.
 
-The potential of LLMs in IoT extends far beyond simple command interpretation. They can enable more sophisticated applications such as predictive maintenance, anomaly detection, and personalized user experiences. Sarzaeim et al. explored the use of LLMs in smart policing systems, showcasing their potential in complex data analysis and pattern recognition \cite{10538107}. This application hints at the broader possibilities of LLMs in IoT, where they could be used to analyze and interpret vast amounts of sensor data, making IoT systems more intelligent and proactive.
+The potential of LLMs in IoT extends far beyond simple command interpretation. They can enable more sophisticated applications such as predictive maintenance, anomaly detection, and personalized user experiences. \citet{10538107} explored the use of LLMs in smart policing systems, showcasing their potential in complex data analysis and pattern recognition. This application hints at the broader possibilities of LLMs in IoT, where they could be used to analyze and interpret vast amounts of sensor data, making IoT systems more intelligent and proactive.
 
-However, integrating LLMs into IoT systems also presents challenges, including privacy concerns, computational requirements, and the need for domain-specific training. Despite these challenges, the potential benefits of LLM-enhanced NLP in IoT are significant. As demonstrated by Xu et al., natural language interfaces can greatly improve the usability of IoT platforms, allowing for more complex and nuanced interactions \cite{9808139}. By leveraging the advanced capabilities of LLMs, future IoT systems could offer unprecedented levels of intuitive control and intelligent automation, paving the way for more accessible and powerful IoT applications across various domains.
+However, integrating LLMs into IoT systems also presents challenges, including privacy concerns, computational requirements, and the need for domain-specific training. Despite these challenges, the potential benefits of LLM-enhanced NLP in IoT are significant. As demonstrated by \citet{9808139}, natural language interfaces can greatly improve the usability of IoT platforms, allowing for more complex and nuanced interactions. By leveraging the advanced capabilities of LLMs, future IoT systems could offer unprecedented levels of intuitive control and intelligent automation, paving the way for more accessible and powerful IoT applications across various domains.
 
-% #TODO: target this section a bit more to software aspect 
 \subsection{Chat oriented architectures}
 % The integration of large language models (LLMs) with Internet of Things (IoT) systems has emerged as a promising frontier, enabling natural language interaction and intelligent control of physical devices. While this specific application domain remains relatively unexplored, several recent works have pioneered the fusion of LLMs and robotics, laying the groundwork for their extension to IoT scenarios \cite{10.1145/3610977.3634966}.
 
@@ -150,16 +130,14 @@ Recent studies have explored multi-modal chatbots in intelligent manufacturing s
 In the realm of human-robot interaction, researchers have developed task-oriented dialogue systems for industrial robots, addressing the lack of domain-specific discourse datasets and emphasizing user experience alongside task completion rates \cite{9869659}. These efforts have resulted in datasets like IRWoZ and frameworks such as ToD4IR, which integrate small talk concepts and human-to-human conversation strategies to support more natural and adaptable dialogue environments.
 
 \Figure[t!](topskip=0pt, botskip=0pt,
-midskip=0pt)[width=\textwidth]{{figures/fig1-ab.png}}
-{ \centering \textbf{Overall architecture of Vega (a) and alongside (b) a simple example.}\label{fig1}}
+midskip=0pt)[width=\textwidth]{{figures/fig1.png}}
+{ \centering \textbf{Overall technical architecture of Vega (a) and alongside (b) a simple generalised example.}\label{fig1}}
 
-The potential of LLMs in easing chatbot development has been demonstrated through large-scale models that can learn blended conversational skills when provided with appropriate training data and generation strategies \cite{roller-etal-2021-recipes}. These models have shown improvements in multi-turn dialogue engagement and human related measurements. Vega utilizes these frontiers within its multi-agent intelligent chatbot allowing it to interact with any IoT system and handle complex queries while maintaining a user-friendly interaction.
-
-
+The potential of LLMs in easing IoT oriented chatbot development has been demonstrated through large-scale models that can learn blended conversational skills when provided with appropriate training data and generation strategies \cite{roller-etal-2021-recipes}. These models have shown improvements in multi-turn dialogue engagement and human related measurements. Vega utilizes these frontiers within its multi-agent intelligent chatbot allowing it to interact with any IoT system and handle complex queries while maintaining a user-friendly interaction.
 
 \section{Methodology}\label{sec:methodology}
-\subsection{Overall Architecture}
 
+\subsection{Overall Architecture}
 The architecture of the Vega system follows key principles of software design to ensure clarity, scalability, maintainability, and robustness \cite{taylor2010software}. The system adopts a modular approach, dividing functionality into distinct components with specific purposes. This design promotes code reuse, facilitates testing, and enhances overall maintenance. The architecture also implements separation of concerns, where different aspects such as user interface, core functionality, and data management are segregated into distinct layers, improving code organization and enabling independent development.
 
 As shown in Figure \ref{fig1} (a), Vega's architecture comprises three main modules: a Web Application, a RPi, and a Physical Circuit. These modules interact in a client-server model \cite{tanenbaum2002distributed}, with the Web Application serving as the client and the RPi as the server. The Physical Circuit is connected to the RPi via hardwired connections.
@@ -172,37 +150,32 @@ A typical use case shown in Figure  \ref{fig1} (b) involves a user interacting w
 
 The technology stack for Vega has been carefully selected to ensure robustness, scalability, and accessibility \cite{math9040308}. The Web Application is built using React \cite{React2024} with TypeScript, employing RadixUI \cite{radix-ui} for accessible components and TailwindCSS \cite{tailwindcss} for responsive design. The App Logic utilizes Next.js \cite{NextJS} and integrates with OpenAI's GPT models \cite{OpenAI_GPT} for language processing. The RPi Control Server is developed using Flask \cite{Flask2024}, while the circuit code leverages RPi libraries for GPIO interaction.
 
-This architecture enables Vega to bridge the gap between complex IoT functionality and user-friendly interaction. By leveraging LLMs for natural language processing and control, the system opens up new possibilities for intuitive IoT applications in various domains, from smart homes to industrial monitoring and educational environments \cite{8067944}. The modular design and carefully chosen technology stack ensure that Vega remains adaptable, maintainable, and scalable as IoT applications continue to evolve and expand.
+This architecture enables Vega to bridge the gap between complex IoT functionality and user-friendly interaction. By leveraging LLMs for NLP and control, the system opens up new possibilities for intuitive IoT applications in various domains, from smart homes to industrial monitoring and educational environments \cite{8067944}. The modular design and carefully chosen technology stack ensure that Vega remains adaptable, maintainable, and scalable as IoT applications continue to evolve and expand.
 
 \subsection{Physical Circuit Design}
+The physical implementation of the Vega platform comprises a custom-designed circuit board that interfaces with the RPi, integrating various input and output devices to facilitate IoT and embedded systems applications. This hardware configuration forms the foundation for the natural language-controlled system, enabling users to interact with commonly used physical components  through LLM-interpreted commands.
 
 \Figure[t!](topskip=0pt, botskip=0pt,
-midskip=0pt)[width=\textwidth]{{figures/fig5.png}}
+midskip=0pt)[width=\textwidth]{{figures/fig2.png}}
 { \textbf{Soldered physical circuit connected to the RPi }\label{fig2}}
-
-% \\TODO: just mention that these componenets are not required for vega to work but are chosen for testing its extended funcitonalitiy 
-The physical implementation of the Vega platform comprises a custom-designed circuit board that interfaces with the RPi, integrating various input and output devices to facilitate IoT and embedded systems applications. This hardware configuration forms the foundation for the natural language-controlled system, enabling users to interact with commonly used physical components  through LLM-interpreted commands.
 
 As shown in Figure \ref{fig2}, the circuit board incorporates a diverse array of input devices, including an ultrasonic sensor for distance measurement, a limit switch for binary state detection, a temperature and humidity sensor for environmental monitoring, a GPS module for location tracking, and a push button for direct user input \cite{electronicwings_sensors_modules}. These components collectively provide a rich set of data sources, enabling the system to respond to complex, context-aware queries and commands.
 
-% #TODO: unnessesary yap
 Output devices on the board include a 12V fan for cooling or air circulation, multiple LEDs (yellow, red, and blue) for visual indicators, a 5V servo motor for precise rotational control, and an I2C LCD display for text output. A 5V relay is incorporated to control the 12V fan, demonstrating the system's capability to manage higher-voltage components safely \cite{smith2020}. The inclusion of these diverse output devices allows for a wide range of physical responses to user commands, from simple visual feedback to more complex mechanical actions.
 
-% #TODO: unnessesary yap
 Power management is a crucial aspect of the circuit design. While most components operate on the 5V supply provided by the RPi, the 12V fan requires a separate power source. To address this, a 9V battery is utilized in conjunction with the relay, ensuring proper voltage supply while maintaining RPi-based control \cite{monk2019}. This setup illustrates the system's ability to accommodate components with varying power requirements within a unified control structure.
 
 The circuit board is designed to connect directly to the RPi's GPIO pins, streamlining the interface between the physical components and the computational core of the system. A camera module, while not physically present on the circuit board, is connected directly to the RPi, expanding the system's capabilities to include image capture and analysis \cite{pi_camera_2018}.
 
 This hardware configuration supports a wide range of potential applications. In smart home scenarios, the temperature sensor and fan could be used for automated climate control, while the GPS module could enable location-based automation in mobile or outdoor settings. In industrial environments, the ultrasonic sensor and limit switch could be employed for proximity detection and safety systems, with the LEDs and LCD providing status information to operators \cite{mcmanus2021}.
 
-% #TODO: this paragraph seems to be repeated a lot
-The versatility of this hardware setup, combined with the LLM-driven control system, enables the exploration of complex, conditional logic without requiring additional RPi-level coding. This integration of diverse sensors and actuators with natural language processing capabilities represents a significant step forward in creating intuitive, user-friendly interfaces for IoT and embedded systems, bridging the gap between sophisticated device functionality and accessible user interaction.
+The versatility of this hardware setup, combined with the LLM-driven control system, enables the exploration of complex, conditional logic without requiring additional RPi-level coding. This integration of diverse sensors and actuators with NLP capabilities represents a significant step forward in creating intuitive, user-friendly interfaces for IoT and embedded systems, bridging the gap between sophisticated device functionality and accessible user interaction.
 
 \subsection{Raspberry Pi Design}
 
 \Figure[t!](topskip=0pt, botskip=0pt,
-midskip=0pt)[scale=0.4]{{figures/fig6.png}}
-{ \textbf{Architecture design of the RPi control server}\label{fig3}}
+midskip=0pt)[scale=0.4]{{figures/fig3.png}}
+{ \centering \textbf{Architecture code design of the RPi including the control server and the database}\label{fig3}}
 
 The architecture of the RPi integration with the existing codebase is designed to enable seamless control and manipulation of the circuit without interfering with pre-existing logic. This approach leverages parallel computing concepts, utilizing processor cores and threads to execute specific logic concurrently with existing code \cite{wilkinson2005parallel}.
 
@@ -211,7 +184,7 @@ The system architecture, illustrated in Figure  \ref{fig3}, comprises two main t
 The Database Thread retrieves sensor data at two-second intervals, storing it in an SQLite database. This persistent storage solution ensures data preservation in the event of system failures, enabling data recovery, analytics, and statistical analysis. The stored data can be retrieved upon request and provided to the LLMs in the web application, enhancing system monitoring and diagnostic capabilities.
 
 \begin{table}
-    \caption{\textbf{Physical devices defined on the Control Server, which are then supplied to the LLM}}
+    \caption{\textbf{Physical devices defined on the Control Server, which are then utilized by the LLM to interact with the circuit}}
     \label{table1}
     \setlength{\tabcolsep}{3pt}
     \begin{tabular}{|p{30pt}|p{32pt}|p{165pt}|}
@@ -290,7 +263,7 @@ Table \ref{table1} presents the devices defined in the Control Server, categoriz
         \hline
         get\underbar{ }raspberry\underbar{ }stats   &
         Gets CPU, RAM, Disk of RPi&
-        "What is the currrent disk usage" \\
+        "What is the current disk usage" \\
         \hline
         capture\underbar{ }image&
         Capture and upload image to Imgur&
@@ -311,73 +284,59 @@ Table \ref{table1} presents the devices defined in the Control Server, categoriz
         \hline
     \end{tabular}
 \end{table}
+
 \Figure[t!](topskip=0pt, botskip=0pt,
-midskip=0pt)[width=\textwidth]{{figures/fig9-refined.png}}
-{\centering \textbf{Webapp user interface implementation (a) Mobile Version alongside (b) Desktop Version}\label{fig4}}
-% #TODO: mention how this is a great alternative to code generation 
-% #TODO: mention there are arguments in the defined functions LLM deals with it 
+midskip=0pt)[width=\textwidth]{{figures/fig4.png}}
+{\centering \textbf{Webapp user interface implementation showcasing (a) Mobile Version alongside (b) Desktop Version}\label{fig4}}
+
 The Control Server exposes a set of defined functions, listed in Table \ref{table2}, which the LLM utilizes to determine logic and execute commands on circuit components. These functions are accessible to the LLM through the "get-functions" REST API endpoint. To execute a particular function, the LLM passes the function identifier and required parameters to the web application logic, which then invokes the "run-function" API endpoint. 
 
 The choice of REST API over alternative protocols such as MQTT was based on several factors. REST offers simplicity, scalability, and statelessness, making it well-suited for web-based applications \cite{s21206904}. It also provides a uniform interface, enabling easier integration with various client applications. While MQTT excels in low-bandwidth, high-latency environments, the current system architecture prioritizes the flexibility and widespread support offered by REST APIs in web development ecosystems.
 
-% \Figure[t!](topskip=0pt, botskip=0pt,
-% midskip=0pt)[scale=0.17]{{figures/fig11-refined.png}}
-% { \textbf{Webapp user interface implementation}\label{fig4}}
-
 The communication flow between the web application and the RPi follows a request-response pattern. The web application sends REST API requests with JSON data specifying the function and arguments for the RPi to execute. The RPi processes these requests, executes the specified functions, and returns JSON responses with the execution status to the web application. This bidirectional communication enables real-time control and monitoring of the IoT devices.
 
-% #TODO: this paragraph seems to be repeated a lot
 This architecture facilitates a modular and extensible system, allowing for easy addition of new devices and functions. It also provides a layer of abstraction between the physical hardware and the LLM-driven interface, enabling natural language control of IoT devices without requiring users to understand the underlying technical details. The integration of LLMs with this IoT control system represents a significant step towards more intuitive and accessible IoT interfaces, potentially broadening the application of IoT technologies across various domains \cite{taylor2010software}.
 
 \subsection{Web App User Interface}
 
-% #TODO: is this clear enough?
 The web application forms the core of the Vega platform, initiating all LLM processing and circuit manipulation tasks. Its architecture is modular, separating the User Interface (VegaChat) from the App Logic (VegaAi). The User Interface shown in Figure \ref{fig4} comprises a Top Bar with RPi connection management and configuration options, and a Chat UI displaying LLM responses and user messages. A Chat History UI manages previous interactions. The App Logic includes Data Management, RPi Bridge, and LLM Agents components, handling data entities, RPi communication, and LLM processing respectively.
 
 \Figure[t!](topskip=0pt, botskip=0pt,
-midskip=0pt)[width=\textwidth]{{figures/fig13-refined.png}}
-{ \textbf{Webapp logic design}\label{fig5}}
+midskip=0pt)[width=\textwidth]{{figures/fig5.png}}
+{ \centering \textbf{Webapp app logic in action featuring LLM agents, application states and RPi connection}\label{fig5}}
 
-
-% #TODO: Maybe expand a bit more
 The UI design prioritizes usability, drawing inspiration from established chatbot interfaces \cite{OpenAI_GPT}. It features a sidebar for chat history, a top bar for configurations, and a main chat area. An automated mode facilitates efficient testing for advanced users while maintaining simplicity for novices. The interface incorporates a Markdown renderer to appropriately display formatted text generated by the LLM.
-
 
 The platform supports various data types and formats to enhance user interaction. It can display GPS data as maps, sensor readings as plots, and camera module output as images. Additionally, it visualizes LLM-generated plans as flow charts. This versatility allows the interface to accommodate diverse IoT devices and sensors, presenting their data in intuitive, visual formats.
 
-
 \subsection{Web App Logic}
-The Application Logic component serves as the core operational engine of the Vega system, managing communication with the RPi Control Server and integrating LLM's for natural language processing and command interpretation. This component acts as a bridge between external elements, orchestrating the flow of information and translating user input into appropriate actions within the system architecture \cite{taylor2010software}.
+The Application Logic component serves as the core operational engine of the Vega system, managing communication with the RPi Control Server and integrating LLM's for NLP and command interpretation. This component acts as a bridge between external elements, orchestrating the flow of information and translating user input into appropriate actions within the system architecture \cite{taylor2010software}.
 
-% #TODO: Maybe expand a bit more and make it fit the section more 
 By leveraging OpenAI's API, the application accesses LLM capabilities without the substantial computational overhead of local hosting \cite{kim2024llmemestimatinggpumemory}. This design choice simplifies and enhances the platform's accessibility and scalability, enabling its deployment across a wide range of devices, platforms and use cases in IoT and embedded systems development.
 
 To establish a connection between the web application and the RPi, the user provides the IP address and port number of the RPi running the Control Server. The web application then initiates concurrent API calls to fetch circuit functions and device information from the Control Server. Upon receiving responses, the connection state is updated, synchronizing the "Raspi Devices" and "Raspi Functions" states which are fed to the LLM.
 
 Figure \ref{fig5} illustrates the system's workflow, demonstrating how user commands are processed through various stages involving multiple LLM agents. When a user inputs a natural language command (e.g., "turn on red LED and capture image"), the system follows these steps:
 
-% #TODO: expand a bit more and make reader understand we have multiple agents
 \begin{enumerate}
-    \item The Stateless LLM Planning Agent generates a flowchart visualizing the planned steps.
+    \item The Stateless LLM Planning Agent generates a plan which is visualized as a flowchart in the user interface.
     \item The Stateless LLM Chat Agent processes the message and determines if a function call to the RPi is necessary.
-    \item If required, the function is executed on the RPi, which returns a response.
-    \item For image data, the Stateless LLM Image Agent analyze and generates a description.
+    \item If required, the function is sent and executed on the RPi, which returns a response.
+    \item For image data, the Stateless LLM Image Agent analyze and generates a description used by the LLM Chat Agent to execute subsequent functions and logic.
     \item Results are displayed on the web application's UI, providing feedback to the user.
 \end{enumerate}
-
-
 
 The system employs three main LLM agents: Chat, Planning, and Image. The LLM Chat Agent, as depicted in Figure \ref{fig6}, operates in two scenarios. In a normal chat scenario, it processes user input and generates a textual response. In a function call (provided by OpenAI) scenario, it recognizes the need for a hardware action and outputs a JSON-formatted function call for the RPi.The call is triggered using context in the user input, such as "turn on" or "capture".
 
 \Figure[h!](topskip=-10pt, botskip=0pt,
-midskip=0pt)[width=0.99\columnwidth]{{figures/fig12.png}}
+midskip=0pt)[width=0.99\columnwidth]{{figures/fig6.png}}
 { \textbf{Execution of the LLM Chat Agent}\label{fig6}}
 
 \Figure[t!](topskip=0pt, botskip=0pt,
-midskip=0pt)[width=\textwidth]{{figures/fig30.png}}
+midskip=0pt)[width=\textwidth]{{figures/fig7.png}}
 { \textbf{Case study of complex commands in action}\label{fig7}}
 
-This approach of using LLM function call for command interpretation and execution offers several advantages over traditional code generation methods. It enhances scalability and adaptability, allowing for easy integration of new sensors and data types without significant system modifications \cite{yang2023autogptonlinedecisionmaking}. Additionally, it improves system security by limiting direct code execution on the RPi, instead relying on predefined functions interpreted by the LLM.
+This approach of using LLM function call for command interpretation and execution offers several advantages over dynamic code generation methods. It enhances scalability and adaptability, allowing for easy integration of new sensors and data types without significant system modifications \cite{yang2023autogptonlinedecisionmaking}. Additionally, it improves system security and maintainability by limiting direct code execution on the RPi, instead relying on predefined functions interpreted by the LLM which prevents dynamic errors.
 
 % The modular design of the system facilitates the incorporation of additional agents, such as those handling voice or video input, extending the system's capabilities to encompass audio and visual recognition functionalities. This flexibility allows for future expansions without major architectural changes.
 
@@ -385,13 +344,7 @@ This approach of using LLM function call for command interpretation and executio
 
 % By leveraging LLMs for IoT control, Vega bridges the gap between complex device functionality and user-friendly interaction. This approach not only enhances accessibility for non-technical users but also opens new avenues for creative and intelligent IoT applications in diverse settings such as smart homes, industrial monitoring, and educational environments.
 
-
-
-
-
-
 \section{Experiment and Validation}\label{sec:experiment}
-
 
 \subsection{Representative Real life case study}
 The experimental phase of this study focuses on demonstrating the system's versatility and real-world applicability through a few typical case studies. Figure \ref{fig7} illustrates two scenarios where our LLM-powered IoT control system effectively manages complex tasks through natural language interaction.
@@ -400,28 +353,25 @@ In the first scenario, the system monitors environmental conditions in a typical
 
 The second case demonstrates the system's capability in a more complex scenario involving geolocation, user input tracking, and multiple actuator controls. The LLM interprets a command to check location, monitor button clicks, and adjust servo motors accordingly. This case highlights the system's ability to integrate various data sources and control multiple IoT devices simultaneously.
 
-The modular design of our demonstrator system, inspired by software engineering principles outlined by Richard et al. \cite{taylor2010software}, ensures its applicability across diverse environments. The web application architecture allows for interaction with various IoT devices beyond the RPi, while the Control Server's design as a standalone Python library enables integration with a wide range of IoT systems. This modularity facilitates easy extension of functionality, whether through new data visualizations in the web application or specialized functions in the Control Server.
+The modular design of our demonstrator system, inspired by software engineering principles outlined by \citet{taylor2010software}, ensures its applicability across diverse environments. The web application architecture allows for interaction with various IoT devices beyond the RPi, while the Control Server's design as a standalone Python library enables integration with a wide range of IoT systems. This modularity facilitates easy extension of functionality, whether through new data visualizations in the web application or specialized functions in the Control Server.
 
-In terms of societal impact, our system demonstrates potential benefits across multiple sectors. In industrial settings, it can enhance automation and efficiency, similar to the improvements in robotic task generation observed by Wang et al. \cite{wang2024gensimgeneratingroboticsimulation}. In educational contexts, it can serve as a learning tool for IoT systems, aligning with the educational applications of LLMs in coding and robotics explored by Shu et al \cite{shu2024llmscodingroboticseducation}.
+In terms of societal impact, our system demonstrates potential benefits across multiple sectors. In industrial settings, it can enhance automation and efficiency, similar to the improvements in robotic task generation observed by \citet{wang2024gensimgeneratingroboticsimulation}. In educational contexts, it can serve as a learning tool for IoT systems, aligning with the educational applications of LLMs in coding and robotics explored by \citet{shu2024llmscodingroboticseducation}.
 
 The system's design prioritizes security by avoiding runtime code generation, addressing potential vulnerabilities often associated with LLM applications in robotics \cite{wang2024gensimgeneratingroboticsimulation}. This approach promotes trust and responsible automation practices, crucial for widespread adoption.
 
-Considering human factors in software engineering \cite{1553657}, our system's natural language interface lowers the barrier to entry for non-technical users, potentially democratizing access to IoT technology. However, as Kim et al. \cite{10.1145/3610977.3634966} observed in their study of LLM-powered human-robot interaction, such systems may elevate user expectations for sophisticated interactions. This underscores the need for careful design of the user interface and interaction patterns.
+Considering human factors in software engineering \cite{1553657}, our system's natural language interface lowers the barrier to entry for non-technical users, potentially democratizing access to IoT technology. However, as \citet{10.1145/3610977.3634966} observed in their study of LLM-powered human-robot interaction, such systems may elevate user expectations for sophisticated interactions. This underscores the need for careful design of the user interface and interaction patterns.
 
 The scalability of our system allows for potential expansion to different platforms and IoT ecosystems. Future iterations could incorporate efficiency metrics to optimize LLM output, potentially reducing computational requirements and associated environmental impact.
 
 \subsection{Automated Evaluation}
 To rigorously assess the performance and robustness of the developed system, an automated evaluation process was implemented. While manual testing provides basic insights, the complexity of the system necessitates a comprehensive automated approach \cite{1290484}. This method enables the execution of numerous test cases, facilitating a thorough examination of the system's behaviour under various configurations and scenarios.
 
-\Figure[t!](topskip=0pt, botskip=0pt, midskip=0pt)[width=0.99\columnwidth]{{figures/fig15-refined.png}}
+\Figure[t!](topskip=0pt, botskip=0pt, midskip=0pt)[width=0.99\columnwidth]{{figures/fig8.png}}
 { \textbf{Evaluation Process integrated within Vega.}\label{fig8}}
 
 The automated evaluation process, illustrated in Figure \ref{fig8}, involves supplying a predefined list of user messages to the application. An LLM agent, designated as the Test Generator, generated approximately 622 test messages. Each message had a complexity ranging from 0 to 1 in which 1 indicates a multi step conditional message. Concurrently, the input parameters of the Chat Agent LLM model such temperature and Top P \cite{rum2024setting} were varied. The evaluation process mirrored the standard execution flow of the application, with a notable deviation occurring post-message processing on the circuit. At this point, the entire chat conversation was transmitted to an LLM Evaluation Agent, tasked with assessing the Chat Agent LLM's response. 
 
 This approach allowed for a nuanced understanding of the system's performance under different conditions, providing insights into potential areas for optimization. The performance of the Chat Agent LLM was evaluated quantitatively based on multiple metrics, each measured on a scale from 0 to 100. The speed metric assessed response generation time, while the efficiency metric measured the degree to which the LLM avoided invoking unnecessary functions. The success rate indicated the overall rate at which the LLM successfully executed the requested action specified in the input message prompt.
-
-
-
 
 % \begin{table}
 %     \caption{\textbf{Evaluation metrics on LLM response of input messages}}
@@ -433,7 +383,7 @@ This approach allowed for a nuanced understanding of the system's performance un
         % \textbf{Description}                                             \\
         % \hline
         % Success Rate   &
-        % How successfull was the execution of the message  \\
+        % How successful was the execution of the message  \\
         % \hline
         % Speed    &
         % How fast was the execution of the full message  \\
@@ -445,156 +395,111 @@ This approach allowed for a nuanced understanding of the system's performance un
 % % \vspace{-15pt}
 % \end{table}
 
-
 \subsection{Result Analysis}
-\Figure[h!](topskip=0pt, botskip=0pt,
-midskip=0pt)[width=0.99\columnwidth]{{figures/fig17.png}}
-{ \textbf{Evaluation metrics for the functions defined in Table \ref{table2}.}\label{fig9}}
-
-\Figure[t!](topskip=0pt, botskip=0pt,
-midskip=0pt)[scale=0.32]{{figures/fig18.png}}
-{ \textbf{Message complexity against the number of functions called per message.}\label{fig10}}
-
 Figure \ref{fig9} illustrates the success rate and speed for each function defined in Table \ref{table2}, with the temperature parameter set to 0.7. The "set\_fan" command exhibited the lowest success rate, likely due to the relay's inherent switching delay causing errors when processing frequent state change requests. This hardware limitation may lead to errors after function execution.  
 
+\Figure[h!](topskip=0pt, botskip=0pt,
+midskip=0pt)[width=0.99\columnwidth]{{figures/fig9.png}}
+{ \textbf{Evaluation metrics for the functions defined in Table \ref{table2}.}\label{fig9}}
+
 Conversely, the "print\_lcd" command achieved the highest success rate, demonstrating the LLM's proficiency with textual arguments. The "set\_led" function demonstrated the highest execution speed, attributable to its simplicity, minimal LLM processing requirements, efficient software GPIO port toggling, and basic LED control hardware. In contrast, the "get\_recorded\_sensor\_data" function exhibited the lowest speed, primarily due to performance limitations of Python when retrieving and processing data from the database.
+
+\Figure[t!](topskip=0pt, botskip=0pt,
+midskip=0pt)[scale=0.32]{{figures/fig10.png}}
+{ \textbf{Message complexity against the number of functions called per message.}\label{fig10}}
 
 Figure \ref{fig10} illustrates the correlation between message complexity and the number of functions invoked per message in our system, with the LLM temperature set to 0.3. Message complexity refers to the intricacy of user queries, while LLM temperature controls the randomness in the model's outputs, with lower values producing more deterministic responses \cite{rum2024setting}. As message complexity increases from 0 to 0.6, we see a rise in function calls per message, indicating more processing for intricate queries. This trend indicates that more intricate user queries require a greater number of system operations to process and respond accurately. The peak at 0.6 complexity may be attributed to an increased number of retries due to function failures, highlighting potential areas for system optimization. 
 
 Beyond 0.6, function calls decrease as complexity increases, mimicking the performance characteristics typically associated with lower temperature settings in LLMs. It suggests that for highly complex queries, our system adopts a more focused and deterministic approach, reducing the need for multiple function invocations. This shift could be interpreted as a positive adaptation, indicating that the system becomes more efficient in handling very complex tasks by generating more precise and targeted responses. However, it also raises questions about the system's flexibility and creativity in addressing highly complex scenarios, which might benefit from a more exploratory approach.
 
 \Figure[t!](topskip=0pt, botskip=0pt,
-midskip=0pt)[width=0.99\columnwidth]{{figures/fig36.png}}
-{ \textbf{Success rate against message complexity and temperature of the LLM.}\label{fig12}}
+midskip=0pt)[width=0.99\columnwidth]{{figures/fig11.png}}
+{ \textbf{Heatmap for success rate against message complexity and temperature of the LLM.}\label{fig11}}
 
-Figure \ref{fig12} represents a heatmap which is a graphical representation of multi-dimensional data in this case, our heatmap shows the interplay between message complexity, LLM's temperature, and the resulting success rates of the LLM in executing IoT control tasks. The heatmap reveals a complex relationship between these variables, with higher success rates, (bright yellow areas) concentrated in regions of moderate to high temperatures (0.7 to 1.0) and moderate complexity (0.4 to 0.6). This pattern suggests that the LLM performs optimally when given some degree of freedom to interpret and respond to moderately complex commands. The high temperature in this optimal zone likely allows the model to explore a wider range of potential interpretations and solutions, which is particularly beneficial when dealing with the nuanced and context-dependent nature of IoT control scenarios \cite{10315791}. 
+Figure \ref{fig11} represents a heatmap which is a graphical representation of 3-dimensional data in this case, our heatmap shows the interplay between message complexity, LLM's temperature, and the resulting success rates of the LLM in executing IoT control tasks. The heatmap reveals a complex relationship between these variables, with higher success rates, (bright yellow areas) concentrated in regions of moderate to high temperatures (0.7 to 1.0) and moderate complexity (0.4 to 0.6). This pattern suggests that the LLM performs optimally when given some degree of freedom to interpret and respond to moderately complex commands. The high temperature in this optimal zone likely allows the model to explore a wider range of potential interpretations and solutions, which is particularly beneficial when dealing with the nuanced and context-dependent nature of IoT control scenarios \cite{10315791}. 
 
-Conversely, lower success rates are observed in regions of high complexity (0.8 to 1.0) combined with low to medium temperatures (0.1 to 0.6). This pattern indicates that when faced with highly complex instructions, a more constrained or deterministic approach (lower temperature) is less effective. Such scenarios might involve intricate sequences of operations or complex conditional logic that benefit from the model's ability to consider a broader range of possibilities. This finding aligns with the observations of Kannan et al. \cite{kannan2024smartllmsmartmultiagentrobot}, who noted that LLMs perform better in complex multi-agent robot task planning scenarios when given more freedom to explore diverse solutions. 
+Conversely, lower success rates are observed in regions of high complexity (0.8 to 1.0) combined with low to medium temperatures (0.1 to 0.6). This pattern indicates that when faced with highly complex instructions, a more constrained or deterministic approach (lower temperature) is less effective. Such scenarios might involve intricate sequences of operations or complex conditional logic that benefit from the model's ability to consider a broader range of possibilities. This finding aligns with the observations of \citet{kannan2024smartllmsmartmultiagentrobot}, who noted that LLMs perform better in complex multi-agent robot task planning scenarios when given more freedom to explore diverse solutions. 
 
 High success rates are desirable as they translate to more reliable and accurate execution of user commands, leading to improved user experience and system performance. Conversely, low success rates could result in misinterpretation of commands, incorrect device operations, or system failures, potentially leading to user frustration or even safety issues in critical applications. 
 
 Understanding these performance characteristics allows for strategic tuning of the LLM's parameters based on the expected complexity of user inputs. For instance, when anticipating complex, multi-step commands, increasing the temperature parameter could potentially boost the system's success rate. This insight could guide the design of user interfaces and command structures, encouraging users to frame their instructions in ways that align with the LLM's strengths.
 
-
-
-% change this to percentage
-
-
-
 \Figure[t!](topskip=0pt, botskip=0pt,
-midskip=0pt)[scale=0.38]{{figures/fig19.png}}
-{ \textbf{Message complexity against all evaluation metrics and most importantly the success rate.}\label{fig11}}
+midskip=0pt)[scale=0.38]{{figures/fig12.png}}
+{ \textbf{Message complexity against all evaluation metrics and most importantly the success rate.}\label{fig12}}
 
-Figure \ref{fig11} illustrates the relationship between message complexity and evaluation metrics with the temperature parameter set to 0.5. As complexity increases, the system's performance decrease. The system achieves peak success rate and efficiency at a complexity level around 0.6, where the system can handle sophisticated user requests while maintaining high reliability. A notable shift occurs at a complexity of 0.8, where the success rate diverges from efficiency and speed. This divergence is attributed to the LLM correctly executing functions but struggling with conditional and sequential order. Such behaviors underscores the challenges in maintaining coherent task execution as complexity scales up, even when individual components are processed accurately. Beyond a complexity of 0.9, all three metrics exhibit an upward trend, indicating the model's capability to handle highly complex tasks while maintaining high success rates albeit with potential trade-offs in efficiency and speed. These findings highlight the delicate balance required in system design: while moderate complexity yields optimal overall performance, the system can adapt to highly complex inputs at the cost of reduced efficiency. This insight is crucial for tailoring the Vega system to different use cases, from simple smart home controls to complex industrial applications, where the balance between task complexity and system performance may vary based on specific 
-
-
-% \Figure[t!](topskip=0pt, botskip=0pt,
-% midskip=0pt)[width=0.99\columnwidth]{{figures/fig26.png}}
-% { \textbf{Magnetization as a function of applied field.
-%         It is good practice to explain the significance of the figure in the
-%         caption.}\label{fig9}}
-
-
+Figure \ref{fig12} illustrates the relationship between message complexity and evaluation metrics with the temperature parameter set to 0.5. As complexity increases, the system's performance decrease. The system achieves peak success rate and efficiency at a complexity level around 0.6, where the system can handle sophisticated user requests while maintaining high reliability. A notable shift occurs at a complexity of 0.8, where the success rate diverges from efficiency and speed. This divergence is attributed to the LLM correctly executing functions but struggling with conditional and sequential order. Such behaviors underscores the challenges in maintaining coherent task execution as complexity scales up, even when individual components are processed accurately. Beyond a complexity of 0.9, all three metrics exhibit an upward trend, indicating the model's capability to handle highly complex tasks while maintaining high success rates albeit with potential trade-offs in efficiency and speed. These findings highlight the delicate balance required in system design: while moderate complexity yields optimal overall performance, the system can adapt to highly complex inputs at the cost of reduced efficiency. This insight is crucial for tailoring the Vega system to different use cases, from simple smart home controls to complex industrial applications, where the balance between task complexity and system performance may vary based on specific requirements and operational contexts. 
 
 \Figure[h!](topskip=0pt, botskip=0pt,
-midskip=0pt)[width=0.99\columnwidth]{{figures/fig37.png}}
-{ \textbf{Success rate against message complexity and Top P of the LLM.}\label{fig13}}
+midskip=0pt)[width=0.99\columnwidth]{{figures/fig13.png}}
+{ \textbf{Heatmap for Success rate against message complexity and Top P of the LLM.}\label{fig13}}
 
-Figure \ref{fig13}, provides additional insights into the relationship between message complexity and Top P. Top P is an LLM parameter limits token selection to the most probable choices that sum to a specified probability threshold \cite{rum2024setting}. The heatmap reveals that high success rates (85-90\%) occur at low complexity (0.1-0.3) with mid-to-high Top P (0.6-0.9) and at moderate complexity (0.4-0.6) with mid-to-high Top P (0.7-0.9). This pattern is consistent with the findings of Singh et al. \cite{Singh2023}, who observed that programmatic prompts with well-defined action specifications lead to more successful plan generation in situated robot environments.
+Figure \ref{fig13}, provides additional insights into the relationship between message complexity and Top P. Top P is an LLM parameter limits token selection to the most probable choices that sum to a specified probability threshold \cite{rum2024setting}. The heatmap reveals that high success rates (85-90\%) occur at low complexity (0.1-0.3) with mid-to-high Top P (0.6-0.9) and at moderate complexity (0.4-0.6) with mid-to-high Top P (0.7-0.9). This pattern is consistent with the findings of \citet{Singh2023}, who observed that programmatic prompts with well-defined action specifications lead to more successful plan generation in situated robot environments.
 
-The primary LLM employed for evaluation in this project was GPT-3.5, developed by OpenAI. However, additional manual evaluations conducted using GPT-4 exhibited an appreciable increase in success rate, attributable to its larger training dataset. This observation is in line with the findings of Wu et al. \cite{Wu2023}, who reported improved performance in personalized robot assistance tasks when using more advanced LLMs.
+The primary LLM employed for evaluation in this project was GPT-3.5, developed by OpenAI. However, additional manual evaluations conducted using GPT-4 exhibited an appreciable increase in success rate, attributable to its larger training dataset. This observation is in line with the findings of \citet{Wu2023}, who reported improved performance in personalized robot assistance tasks when using more advanced LLMs.
 
-These findings have significant implications for LLM-driven IoT control systems. The heatmaps provide valuable guidance for understanding optimal configurations across different IoT scenarios, contributing to the design of more robust and intuitive LLM-powered interfaces. By carefully tuning parameters such as temperature, Top P, and task complexity, it is possible to achieve higher success rates and more reliable system performance.
+These findings have significant implications for LLM-driven IoT control systems. The heatmap provide valuable guidance for understanding optimal configurations across different IoT scenarios, contributing to the design of more robust and intuitive LLM-powered interfaces. By carefully tuning parameters such as temperature, Top P, and task complexity, it is possible to achieve higher success rates and more reliable system performance.
 
-The results also highlight the importance of considering the trade-offs between exploration (controlled by temperature and Top P) and task difficulty (complexity) in IoT control scenarios. This aligns with the observations of Vemprala et al. \cite{10500490}, who emphasized the need for balancing exploration and exploitation in robotics applications using LLMs.
+The results also highlight the importance of considering the trade-offs between exploration (controlled by temperature and Top P) and task difficulty (complexity) in IoT control scenarios. This aligns with the observations of \citet{10500490}, who emphasized the need for balancing exploration and exploitation in robotics applications using LLMs.
 
-Moreover, the non-uniform distribution of success rates across the parameter space underscores the need for adaptive parameter selection strategies in real-world IoT deployments. This is particularly relevant in dynamic environments where task complexity may vary, as noted by Ding et al. \cite{Ding2023} in their work on integrating action knowledge and LLMs for task planning in open worlds.
+Moreover, the non-uniform distribution of success rates across the parameter space underscores the need for adaptive parameter selection strategies in real-world IoT deployments. This is particularly relevant in dynamic environments where task complexity may vary, as noted by \citet{Ding2023} in their work on integrating action knowledge and LLMs for task planning in open worlds.
 
-The observed performance improvements with GPT-4 suggest that future advancements in LLM architectures and training methodologies may lead to even more capable IoT control systems. This potential for improvement is consistent with the rapid progress observed in LLM-based systems across various domains, as highlighted by Gupta et al. \cite{10198233} in their analysis of GenAI impacts on cybersecurity and privacy.
+The observed performance improvements with GPT-4 suggest that future advancements in LLM architectures and training methodologies may lead to even more capable IoT control systems. This potential for improvement is consistent with the varied capabilities of LLMs across different tasks, as highlighted by \citet{10.1145/3641289} in their comprehensive survey on the evaluation of LLMs across multiple domains and reasoning types.
 
-However, it is important to note that while LLMs show promise in IoT control applications, they also present challenges related to reliability, interpretability, and security. As pointed out by Sarzaeim et al. \cite{10538107} in their work on LLM-assisted smart policing systems, careful consideration must be given to the ethical implications and potential biases of LLM-driven decision-making in critical systems.
+However, it is important to note that while LLMs show promise in IoT control applications, they also present challenges related to reliability, interpretability, and security. As pointed out by \citet{10538107} in their work on LLM-assisted smart policing systems, careful consideration must be given to the ethical implications and potential biases of LLM-driven decision-making in critical systems.
 
-The experimental results provide valuable insights into the performance characteristics of LLM-powered IoT control systems. By understanding the relationships between input parameters and success rates, developers can optimize these systems for improved reliability and effectiveness across a wide range of IoT applications. Future work should focus on developing adaptive parameter selection strategies, improving LLM performance on high-complexity tasks, and addressing the ethical and security considerations associated with LLM deployment in IoT environments.
-
-
+The experimental results provide valuable insights into the performance characteristics of LLM-powered IoT control systems. By understanding the relationships between input parameters and success rates, developers can optimize these systems for improved reliability and effectiveness across a wide range of IoT applications. 
 
 \Figure[t!](topskip=0pt, botskip=0pt,
-midskip=0pt)[scale=0.4]{{figures/fig34.png}}
+midskip=0pt)[scale=0.4]{{figures/fig14.png}}
 { \textbf{What types of errors occurred throughout testing.}\label{fig14}}
 
-
 Figure \ref{fig14}, titled "Error Occurrences," shows a pie chart of errors in the Vega platform. LLM-related issues dominate, with wrong format and incorrect logic making up 59\% of errors, highlighting the challenges of LLM integration and the need for better prompt engineering or parsing. The error distribution reflects the platform's complexity, where OpenAI timeout errors (14\%) suggest potential API-related performance bottlenecks, and webapp runtime errors (18\%) point to user interface stability issues. The lower rate of RPi device errors (9\%) indicates reliable hardware, with most challenges residing in software and AI integration.
-
 
 Figure \ref{fig15} illustrates the success rate of message interpretation by the system across three message length categories: minimal (73.0\%), normal (68.0\%), and descriptive (84.0\%). Notably, the descriptive messages achieve the highest success rate, indicating that more detailed inputs significantly improve performance. Interestingly, minimal messages outperform normal ones, suggesting that concise commands may reduce ambiguity. The lower success rate for normal messages suggests a potential trade-off between brevity and specificity, emphasizing that either highly detailed or very concise communication may be optimal. 
 
 \Figure[t!](topskip=0pt, botskip=0pt,
-midskip=0pt)[scale=0.40]{{figures/fig35.png}}
+midskip=0pt)[scale=0.40]{{figures/fig15.png}}
 { \textbf{Success rate of different tones of the same message.}\label{fig15}}
 
+In summary, our experimental results reveal several key insights. The system demonstrates a high level of proficiency in interpreting and executing complex commands, particularly excelling with descriptive inputs, achieving an impressive 84\% success rate. We observed that performance fluctuates based on message complexity and LLM parameters, with optimal results occurring at moderate complexity levels (0.4-0.6) and higher temperature settings (0.7-1.0). Notably, different IoT functions exhibit varying degrees of success and execution speeds, with text-based operations such as LCD control performing exceptionally well. 
 
-% #TODO: look into this more (does it mention other insights)
-In summary, our experimental results reveal several key insights. The system demonstrates a high level of proficiency in interpreting and executing complex commands, particularly excelling with descriptive inputs, achieving an impressive 84\% success rate. We observed that performance fluctuates based on message complexity and LLM parameters, with optimal results occurring at moderate complexity levels (0.4-0.6) and higher temperature settings (0.7-1.0). Notably, different IoT functions exhibit varying degrees of success and execution speeds, with text-based operations such as LCD control performing exceptionally well. However, our analysis also uncovered that the majority of observed errors (59\%) stem from LLM-related issues, including incorrect formatting and logic, which clearly indicates areas for future improvement and refinement of the system. The system excels at interpreting both simple and complex queries, and it can generate follow-up questions to ensure accurate query execution, in combination with the high success rate this makes Vega a comprehensive and user-friendly NLP solution for IoT and embedded systems development.
-
-% Throughout the analysis Vega provides an accessible user interface with shortcuts, an advanced mode for automatic evaluation and support for wide array of data types, such as plots and flow charts. The system can easily integrate various circuit components and employs intelligent agents for enhanced robustness.. With a high success rate across diverse scenarios, Vega supports multi-modal inputs, currently including image processing. This combination of features makes Vega a comprehensive and user-friendly solution for IoT and embedded systems development, bridging the gap between complex functionality and intuitive user interaction.
+Throughout the analysis Vega provides an accessible user interface with shortcuts, an advanced mode for automatic evaluation and support for wide array of data types, such as plots and flow charts. The system can easily integrate various circuit components and employs intelligent agents for enhanced robustness.. With a high success rate across diverse scenarios, Vega supports multi-modal inputs, currently including image processing. This combination of features makes Vega a comprehensive and user-friendly solution for IoT and embedded systems development, bridging the gap between complex functionality and intuitive user interaction.
 
 \subsection{Limitations and Future Work}
-The current implementation of our system, while innovative, faces several limitations that warrant acknowledgment. Our choice to utilize GPT-3.5 instead of GPT-4, driven by cost considerations at the time of the study, may have constrained the system's overall performance and capability. A significant concern arises from the reliance on OpenAI's cloud-based service, which introduces potential data privacy issues as user interactions are processed externally. Despite extensive testing across various scenarios, the inherent unpredictability of LLMs remains a challenge, with the possibility of misinterpreting user commands or producing inconsistent responses. The prohibitive cost of fine-tuning at scale presents a barrier to improving the system's accuracy and reliability. Moreover, the current architecture lacks support for real-time feedback, limiting the fluidity of user interactions. The system's dependency on specific hardware (RPi) and software (Python-based server) configurations may restrict its applicability in diverse IoT environments.
+The current implementation of our system, while innovative, faces several limitations that warrant acknowledgment. Our choice to utilize GPT-3.5 instead of GPT-4, driven by cost considerations at the time of the study, may have constrained the system's overall performance and capability. As our analysis uncovered that the majority of observed errors (59\%) stem from LLM-related issues, including incorrect formatting and logic, which clearly indicates areas for future improvement and refinement of the system, however utilising GPT-4 could help mitigate those issues. A significant concern arises from the reliance on OpenAI's cloud-based service, which introduces potential data privacy issues as user interactions are processed externally. Despite extensive testing across various scenarios, the inherent unpredictability of LLMs remains a challenge, with the possibility of misinterpreting user commands or producing inconsistent responses. The prohibitive cost of fine-tuning at scale presents a barrier to improving the system's accuracy and reliability. Moreover, the current architecture lacks support for real-time feedback, limiting the fluidity of user interactions. The system's dependency on specific hardware (RPi) and software (Python-based server) configurations may restrict its applicability in diverse IoT environments.
 
-Future work aims to address these limitations and expand the system's functionality and applicability. A primary objective is the implementation of real-time feedback mechanisms, enabling live interactions between the LLM, web application, and user, thus enhancing the responsiveness and intuitiveness of the interface. Developing a framework for repeatable logic execution would allow complex commands to run periodically on the IoT device without constant LLM oversight, improving efficiency and reducing computational load. Expanding support to C/C++-based IoT platforms such as STM32 and Arduino would significantly broaden the system's compatibility with diverse hardware ecosystems. The integration of an MQTT server alongside the existing Flask server could enhance IoT interoperability, allowing for more flexible and scalable device communication. Exploring options for local LLM hosting and investigating alternative, potentially open-source LLM solutions could mitigate privacy concerns and potentially reduce operational costs. Additionally, future research could focus on developing more sophisticated natural language understanding capabilities, enabling the system to handle increasingly complex and context-dependent user queries. These enhancements would collectively contribute to a more versatile, secure, and user-friendly IoT interface, paving the way for broader adoption in smart homes, industrial settings, and educational environments.
+Future work aims to address these limitations and expand the system's functionality and applicability. A primary objective is the implementation of real-time feedback mechanisms, enabling live interactions between the LLM, web application, and user, thus enhancing the responsiveness and intuitiveness of the interface. Developing a framework for repeatable logic execution would allow complex commands to run periodically on the IoT device without constant LLM oversight, improving efficiency and reducing computational load. Expanding support to C/C++ based IoT platforms such as STM32 and Arduino would significantly broaden the system's compatibility with diverse hardware ecosystems. The integration of an MQTT server alongside the existing Flask server could enhance IoT interoperability, allowing for more flexible and real time device communication. Exploring options for local LLM hosting and investigating alternative, potentially open-source LLM solutions could mitigate privacy concerns and potentially reduce operational costs. Additionally, future research could focus on developing more sophisticated natural language understanding capabilities, enabling the system to handle increasingly complex and context-dependent user queries. Lastly future work should focus on developing adaptive parameter selection strategies, improving LLM performance on high-complexity tasks, and addressing the ethical and security considerations associated with LLM deployment in IoT environments. These enhancements would collectively contribute to a more versatile, secure, and user-friendly IoT interface, paving the way for broader adoption in smart homes, industrial settings, and educational environments. 
 
 \section{Conclusion}\label{sec:conclusion}
-This project successfully developed a system that integrates natural language processing with an IoT infrastructure. The system consists of a web application interfacing with a LLM to interpret user commands, which are then executed on a RPi controlling a physical circuit. The system exhibits a modular and scalable architecture, with components comprehensively documented. 
+This project successfully developed a system that integrates NLP with an IoT infrastructure. The system consists of a web application interfacing with a LLM to interpret user commands, which are then executed on a RPi controlling a physical circuit. The system exhibits a modular and scalable architecture, with components comprehensively documented. 
 
 Many features were developed within the system such as image recognition, complex task interpretation, user friendly chat application, modular server on the RPi and wide range of circuit devices. Evaluation results demonstrate the system's capability to handle complex tasks while maintaining high success rates when appropriate LLM temperature settings are used. Case studies illustrate real-world applications like machinery monitoring and drone delivery systems.
 
 The system prioritises modularity, security, and scalability, allowing integration with diverse IoT devices and LLM providers. It accommodates new circuit components, visualisations, and functionality. Societal benefits include automation efficiency, technological literacy, responsible practices, and customisability to address ethical concerns. Overall, this project represents a significant step towards integrating natural language processing and IoT infrastructures, providing a foundation for intelligent automation and human-machine interaction advancements. 
 
+%TC:ignore
 \section*{Acknowledgment}
-The technical staff at the University of Leeds, especially the lab technician Scot Simpson, as he supplied a lot of circuit devices that were utilised in the final circuit design as well as giving guidance on how to perform a safe soldering process. Moving on, the authors would like to thank Vercel for providing a similar chat app which was a big inspiration for the web application.
+The technical staff at the University of Leeds, especially the lab technician Scot Simpson, as he supplied plenty of electronic components that were utilised in the final circuit design as well as giving guidance on how to perform a safe soldering process. Moving on, the authors would like to thank Vercel for providing a similar chat app which was a big inspiration for the web application.
 
-\bibliographystyle{unsrt}
+\bibliographystyle{IEEEtranN}
 \bibliography{refs}
 
 \vskip -2\baselineskip plus -1fil
-
 
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip]{author1.png}}]{Harith Al-Safi} received the BEng industrial degree in Electronics and Computer with a first class honours from the University of Leeds, in 2024. He was an IoT Software Engineer at Johnson Controls. He was a frontend developer at Velz Travel.  He participated in many hackathons related to artificial intelligence. He is currently pursuing a Graduate Software Developer role at BT Group. His research interests include IoT, embedded systems, computational finance and machine learning.
 \end{IEEEbiography}
 
 \vskip -2\baselineskip plus -1fil
 
-\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{author2.jpeg}}]{Harith Sami} is currently doing an MEng industrial degree in Mechatronics and Robotics at the University of Leeds. He was a technical designer at Electronics Art, a network optimization engieer at Nokia, and currently a machine learning engineer at Ultracell. His research interests include Robotics, LLM's, and machine learning.
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{author2.jpeg}}]{Harith Ibrahim} is currently pursuing an MEng industrial degree in Mechatronics and Robotics at the University of Leeds. He was a technical designer at Electronics Arts, a network optimization engineer at Nokia Bell Labs, and currently a machine learning engineer at Ultracell Networks Ltd. His research interests include Robotics and Machine Learning.
 \end{IEEEbiography}
 
 \vskip -2\baselineskip plus -1fil
 
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{author3.jpg}}]{Dr Paul Steenson} Dr D.P. Steenson is a Senior Lecturer at the University of Leeds with over 30 years of research and development and teaching experience in High- frequency Electronics and Micro-fabrication, with broad interests covering material science, microwave \& millimetre wave circuit and component design and manufacture for applications in communications and remote sensing, and also including Er-ion doped thin-film glass on semiconductor and microfluidics and microelectrode arrays and manifolds for use in Electro- and Neuro-physiology research, where smart wearable remote sensor networks, herald a whole new approach to remote diagnostics and health management. 
 \end{IEEEbiography}
-
-% \newpage
-
-%If you do not have or do not want to include a photo, you can use IEEEbiographynophoto as shown below:
-
-% \begin{IEEEbiographynophoto}{Third C. Author, Jr.} (M'87) received the B.S.
-%     degree in mechanical
-%     engineering from National Chung Cheng University, Chiayi, Taiwan, in 2004
-%     and the M.S. degree in mechanical engineering from National Tsing Hua
-%     University, Hsinchu, Taiwan, in 2006. He is currently pursuing the Ph.D.
-%     degree in mechanical engineering at Texas A{\&}M University, College
-%     Station, TX, USA.
-
-%     From 2008 to 2009, he was a Research Assistant with the Institute of
-%     Physics, Academia Sinica, Tapei, Taiwan. His research interest includes the
-%     development of surface processing and biological/medical treatment
-%     techniques using nonthermal atmospheric pressure plasmas, fundamental study
-%     of plasma sources, and fabrication of micro- or nanostructured surfaces.
-
-%     Mr. Author's awards and honors include the Frew Fellowship (Australian
-%     Academy of Science), the I. I. Rabi Prize (APS), the European Frequency and
-%     Time Forum Award, the Carl Zeiss Research Award, the William F. Meggers
-%     Award and the Adolph Lomb Medal (OSA).
-% \end{IEEEbiographynophoto}
+%TC:endignore
 
 \EOD
 

@@ -33,7 +33,10 @@ Sections:
 
 todo
 [ ] Add footnotes for libraries instead of reference 
-[ ] Add reference to definitions of LLM top P and temperature 
+[x] Add reference to definitions of LLM top P and temperature 
+[x] Change hyperlink colors
+[x] Check abbreviation 
+[ ] pg7 and pg3
 [x] 1.5 line on page 3
 [x] last paragraph on section 3.A
 [x] add a 3 line paragraph on page 4
@@ -45,10 +48,10 @@ todo
 [x] Add figure to showcase real life scenarios
 [x] Change/remove automation figure
 [x] Try out message with different tones (tone 1: success rate, tone 2: success rate)
-[ ] Add tones and metrics in experiment section either as bullet points or table
-[ ] Add link to code
-[ ] Add link to video 
-[ ] Make sure cross refernce is correct 
+[x] Add tones and metrics in experiment section either as bullet points or table
+[x] Add link to code
+[x] Add link to video 
+[x] Make sure cross refernce is correct 
 [ ] Check figure and table names and description 
 [ ] Check grammer 
 [ ] Check spelling 
@@ -56,10 +59,11 @@ todo
 [ ] Check acronyms 
 [ ] Check redefinitions
 [ ] Check references 
-[ ] Check Paul's
-[ ] Check harith
+[x] Check Paul's
+[x] Check harith
 [ ] change bullet points of page 8 
 [ ] change the contribution list 
-[ ] start section IV.A
+[x] start section IV.A
 [ ] Check todos on code
-[ ] remove repeated refercnces 
+[x] remove repeated refercnces 
+[ ] check if you mentioned real life applications 
