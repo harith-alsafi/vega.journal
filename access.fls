@@ -1,9 +1,9 @@
-PWD /mnt/a/Education/University/journals/vega-acm/ieee-access/latex-template
+PWD /home/harithalsafi/personal/vega.journal
 INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /mnt/a/Education/University/journals/vega-acm/ieee-access/latex-template/access.tex
+INPUT /home/harithalsafi/personal/vega.journal/access.tex
 OUTPUT access.log
 INPUT ./ieeeaccess.cls
 INPUT ./ieeeaccess.cls
