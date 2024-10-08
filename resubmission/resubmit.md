@@ -5,9 +5,9 @@ This paper presents a Vega system that leverages large language models (LLMs) to
 [add this in IV.A]
 
 2. In the proposed Vega system, the LLM is accessed via OpenAI’s API rather than through a locally trained or fine-tuned model. Therefore, the LLM may lack specific expertise in IoT hardware control. Could this lead to errors when interpreting more complex commands? 
-[mention this in IV.C]
+[mention this in IV.C] cost to benefit ratio 
 
-3. Although this paper demonstrates a functioning system, it relies on the integration of existing devices and third-party applications, which may lack originality and innovation. [mention in ]
+3. Although this paper demonstrates a functioning system, it relies on the integration of existing devices and third-party applications, which may lack originality and innovation. [mention in IV.A]
 
 4. In proposed the multi-agent intelligent chatbot, there are few descriptions of the agents. The author may consider introducing their technical principle, implementation schemes, etc. 
 [mention in III.E]
