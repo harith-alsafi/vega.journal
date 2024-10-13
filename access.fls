@@ -1,9 +1,9 @@
-PWD /home/harithalsafi/personal/vega.journal
+PWD /mnt/a/Education/University/journals/vega-acm/ieee-access/latex-template
 INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/harithalsafi/personal/vega.journal/access.tex
+INPUT /mnt/a/Education/University/journals/vega-acm/ieee-access/latex-template/access.tex
 OUTPUT access.log
 INPUT ./ieeeaccess.cls
 INPUT ./ieeeaccess.cls
@@ -823,9 +823,10 @@ INPUT ./images/fig1.png
 INPUT t1-formata-bold.tfm
 INPUT t1-formata-medium.tfm
 INPUT t1-times.tfm
-INPUT t1-formata-medium.tfm
-INPUT t1-formata-mediumitalic.tfm
-INPUT t1-formata-mediumitalic.tfm
+INPUT t1-formata-bold.tfm
+INPUT t1-formata-bolditalic.tfm
+INPUT t1-formata-bolditalic.tfm
+INPUT t1-formata-bolditalic.tfm
 INPUT ./notaglinelogo.png
 INPUT ./notaglinelogo.png
 INPUT notaglinelogo.png
@@ -926,10 +927,6 @@ INPUT ./notaglinelogo.png
 INPUT ./notaglinelogo.png
 INPUT notaglinelogo.png
 INPUT ./notaglinelogo.png
-INPUT t1-formata-bold.tfm
-INPUT t1-formata-bolditalic.tfm
-INPUT t1-formata-bolditalic.tfm
-INPUT t1-formata-bolditalic.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm
 INPUT ./notaglinelogo.png
 INPUT ./notaglinelogo.png
@@ -1068,10 +1065,6 @@ INPUT ./bullet.png
 INPUT ./bullet.png
 INPUT bullet.png
 INPUT ./bullet.png
-INPUT ./notaglinelogo.png
-INPUT ./notaglinelogo.png
-INPUT notaglinelogo.png
-INPUT ./notaglinelogo.png
 INPUT ./notaglinelogo.png
 INPUT ./notaglinelogo.png
 INPUT notaglinelogo.png
