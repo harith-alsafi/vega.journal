@@ -9,7 +9,7 @@ This paper presents a Vega system that leverages large language models (LLMs) to
 
 [x] 3. Although this paper demonstrates a functioning system, it relies on the integration of existing devices and third-party applications, which may lack originality and innovation. [mention in IV.A]
 
-[ ] 4. In proposed the multi-agent intelligent chatbot, there are few descriptions of the agents. The author may consider introducing their technical principle, implementation schemes, etc. 
+[x] 4. In proposed the multi-agent intelligent chatbot, there are few descriptions of the agents. The author may consider introducing their technical principle, implementation schemes, etc. 
 [mention in III.E]
 
 [x] 5. In the conclusion, the authors might consider discussing the limitations of the proposed system and potential directions for future research. 
@@ -21,10 +21,10 @@ This paper presents a Vega system that leverages large language models (LLMs) to
 
 
 Reviewer 2:
-The use of technical jargon, while necessary, should be balanced with explanations to ensure accessibility for a broader audience. For instance, briefly explaining terms like “LLM” (Large Language Models) and “multiagents” could help non-experts understand better.
-[Explain in II.A]
+[x] The use of technical jargon, while necessary, should be balanced with explanations to ensure accessibility for a broader audience. For instance, briefly explaining terms like “LLM” (Large Language Models) and “multiagents” could help non-experts understand better.
+[Explain in II.A] 
 
-Basically, this work is simply text-controlled IoT. In fact, voice-controlled IoT is already mature, e.g., Google Home, etc. The authors make a simple thing complicated with an overkill solution. You just need to use a powerful LLM (and this is not the authors’ contribution) to translate human commands to IoT instructions. This is a fairly trivial task for an average LLM.
+[x] Basically, this work is simply text-controlled IoT. In fact, voice-controlled IoT is already mature, e.g., Google Home, etc. The authors make a simple thing complicated with an overkill solution. You just need to use a powerful LLM (and this is not the authors’ contribution) to translate human commands to IoT instructions. This is a fairly trivial task for an average LLM.
 
 -----------------------TODO---------------------------
 - 40 vs 38 ---> remove one [x]
