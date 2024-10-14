@@ -4,10 +4,10 @@ This paper presents a Vega system that leverages large language models (LLMs) to
 [x] 1. This paper emphasizes that Vega provides natural language interfaces for IoT control, however, LLMs often require more specialized prompts to function effectively. This may hinder users who lack experience in prompt engineering or interacting with LLMs (e.g., ChatGPT).
 [add this in IV.A]
 
-[ ] 2. In the proposed Vega system, the LLM is accessed via OpenAI’s API rather than through a locally trained or fine-tuned model. Therefore, the LLM may lack specific expertise in IoT hardware control. Could this lead to errors when interpreting more complex commands? 
+[x] 2. In the proposed Vega system, the LLM is accessed via OpenAI’s API rather than through a locally trained or fine-tuned model. Therefore, the LLM may lack specific expertise in IoT hardware control. Could this lead to errors when interpreting more complex commands? 
 [mention this in IV.C] cost to benefit ratio 
 
-[ ] 3. Although this paper demonstrates a functioning system, it relies on the integration of existing devices and third-party applications, which may lack originality and innovation. [mention in IV.A]
+[x] 3. Although this paper demonstrates a functioning system, it relies on the integration of existing devices and third-party applications, which may lack originality and innovation. [mention in IV.A]
 
 [ ] 4. In proposed the multi-agent intelligent chatbot, there are few descriptions of the agents. The author may consider introducing their technical principle, implementation schemes, etc. 
 [mention in III.E]
@@ -30,5 +30,5 @@ Basically, this work is simply text-controlled IoT. In fact, voice-controlled Io
 - 40 vs 38 ---> remove one [x]
 - 46 vs 1  ---> remove one [x]
 - 22 vs 13 ---> replace one with jiang2023largelanguagemodelenhanced [x]
-- rewrite  ---> conclusion []
+- rewrite  ---> conclusion; remove redundant info [x]
 - rewrite  ---> real life case study [] 

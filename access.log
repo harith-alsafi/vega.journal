@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.6.4)  13 OCT 2024 12:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.10.7)  14 OCT 2024 10:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/mnt/a/Education/University/journals/vega-acm/ieee-access/latex-template/access
-(/mnt/a/Education/University/journals/vega-acm/ieee-access/latex-template/access.tex
+**/home/harithalsafi/personal/vega.journal/access.tex
+(/home/harithalsafi/personal/vega.journal/access.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21> (./ieeeaccess.cls (./IEEEtran.cls
 Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
@@ -520,7 +520,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/pcr/b/n on input line 32.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/cmsy/m/n --> OMS/cmsy/b/n on input line 32.
-<bullet.png, id=80, 12.045pt x 35.38219pt>
+<bullet.png, id=92, 12.045pt x 35.38219pt>
 File: bullet.png Graphic file (type png)
 <use bullet.png>
 Package pdftex.def Info: bullet.png  used on input line 54.
@@ -554,7 +554,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<logo.png, id=89, 206.27063pt x 53.44969pt>
+<logo.png, id=101, 206.27063pt x 53.44969pt>
 File: logo.png Graphic file (type png)
 <use logo.png>
 Package pdftex.def Info: logo.png  used on input line 73.
@@ -597,7 +597,7 @@ Underfull \hbox (badness 1701) in paragraph at lines 96--97
 \T1/times/n/n/10 robot task plan-ning. This ap-proach uses LLMs to con-
  []
 
-<notaglinelogo.png, id=119, 169.38281pt x 42.91031pt>
+<notaglinelogo.png, id=131, 169.38281pt x 42.91031pt>
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
 Package pdftex.def Info: notaglinelogo.png  used on input line 101.
@@ -631,7 +631,7 @@ Underfull \hbox (badness 3323) in paragraph at lines 118--119
 []\T1/times/n/n/10 In the realm of human-robot in-ter-ac-tion, re-searchers
  []
 
-<images/fig1.png, id=154, 1190.57297pt x 510.78328pt>
+<images/fig1.png, id=166, 1190.57297pt x 510.78328pt>
 File: images/fig1.png Graphic file (type png)
 <use images/fig1.png>
 Package pdftex.def Info: images/fig1.png  used on input line 122.
@@ -664,7 +664,7 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [3]
-<images/fig2.png, id=185, 1129.97156pt x 660.59297pt>
+<images/fig2.png, id=198, 1129.97156pt x 660.59297pt>
 File: images/fig2.png Graphic file (type png)
 <use images/fig2.png>
 Package pdftex.def Info: images/fig2.png  used on input line 147.
@@ -698,7 +698,7 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [4 <./images/fig1.png>]
-<images/fig3.png, id=207, 944.02687pt x 671.50874pt>
+<images/fig3.png, id=219, 944.02687pt x 671.50874pt>
 File: images/fig3.png Graphic file (type png)
 <use images/fig3.png>
 Package pdftex.def Info: images/fig3.png  used on input line 165.
@@ -741,7 +741,7 @@ Underfull \hbox (badness 1675) in paragraph at lines 224--225
 \T1/times/n/n/10 API end-point. In-put de-vices pri-mar-ily trans-mit data for
  []
 
-<images/fig4.png, id=221, 1167.61218pt x 666.61546pt>
+<images/fig4.png, id=232, 1167.61218pt x 666.61546pt>
 File: images/fig4.png Graphic file (type png)
 <use images/fig4.png>
 Package pdftex.def Info: images/fig4.png  used on input line 230.
@@ -781,7 +781,7 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [6 <./images/fig3.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<images/fig5.png, id=236, 1160.08406pt x 428.35031pt>
+<images/fig5.png, id=246, 1160.08406pt x 428.35031pt>
 File: images/fig5.png Graphic file (type png)
 <use images/fig5.png>
 Package pdftex.def Info: images/fig5.png  used on input line 292.
@@ -818,7 +818,7 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [7 <./images/fig4.png>]
-<images/fig6.png, id=250, 917.67844pt x 647.41875pt>
+<images/fig6.png, id=260, 917.67844pt x 647.41875pt>
 File: images/fig6.png Graphic file (type png)
 <use images/fig6.png>
 Package pdftex.def Info: images/fig6.png  used on input line 319.
@@ -827,7 +827,7 @@ File: images/fig6.png Graphic file (type png)
 <use images/fig6.png>
 Package pdftex.def Info: images/fig6.png  used on input line 319.
 (pdftex.def)             Requested size: 240.24814pt x 169.4906pt.
-<images/fig7.png, id=251, 749.04843pt x 656.4525pt>
+<images/fig7.png, id=261, 749.04843pt x 656.4525pt>
 File: images/fig7.png Graphic file (type png)
 <use images/fig7.png>
 Package pdftex.def Info: images/fig7.png  used on input line 323.
@@ -901,7 +901,7 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [9 <./images/fig7.png>]
-<images/fig8.png, id=283, 1056.94875pt x 642.14906pt>
+<images/fig8.png, id=293, 1056.94875pt x 642.14906pt>
 File: images/fig8.png Graphic file (type png)
 <use images/fig8.png>
 Package pdftex.def Info: images/fig8.png  used on input line 346.
@@ -910,7 +910,7 @@ File: images/fig8.png Graphic file (type png)
 <use images/fig8.png>
 Package pdftex.def Info: images/fig8.png  used on input line 346.
 (pdftex.def)             Requested size: 240.24814pt x 145.95686pt.
-<images/fig9.png, id=288, 923.32452pt x 636.50298pt>
+<images/fig9.png, id=298, 923.32452pt x 636.50298pt>
 File: images/fig9.png Graphic file (type png)
 <use images/fig9.png>
 Package pdftex.def Info: images/fig9.png  used on input line 357.
@@ -944,7 +944,7 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [10 <./images/fig8.png> <./images/fig9.png>]
-<images/fig10.png, id=305, 662.85141pt x 546.16547pt>
+<images/fig10.png, id=313, 662.85141pt x 546.16547pt>
 File: images/fig10.png Graphic file (type png)
 <use images/fig10.png>
 Package pdftex.def Info: images/fig10.png  used on input line 363.
@@ -953,7 +953,7 @@ File: images/fig10.png Graphic file (type png)
 <use images/fig10.png>
 Package pdftex.def Info: images/fig10.png  used on input line 363.
 (pdftex.def)             Requested size: 212.11678pt x 174.7765pt.
-<images/fig11.png, id=308, 569.12625pt x 417.43452pt>
+<images/fig11.png, id=316, 569.12625pt x 417.43452pt>
 File: images/fig11.png Graphic file (type png)
 <use images/fig11.png>
 Package pdftex.def Info: images/fig11.png  used on input line 371.
@@ -962,7 +962,7 @@ File: images/fig11.png Graphic file (type png)
 <use images/fig11.png>
 Package pdftex.def Info: images/fig11.png  used on input line 371.
 (pdftex.def)             Requested size: 240.24814pt x 176.21303pt.
-<images/fig12.png, id=312, 572.1375pt x 461.09766pt>
+<images/fig12.png, id=320, 572.1375pt x 461.09766pt>
 File: images/fig12.png Graphic file (type png)
 <use images/fig12.png>
 Package pdftex.def Info: images/fig12.png  used on input line 383.
@@ -996,7 +996,7 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [11 <./images/fig10.png> <./images/fig11.png>]
-<images/fig13.png, id=322, 568.37344pt x 418.18735pt>
+<images/fig13.png, id=331, 568.37344pt x 418.18735pt>
 File: images/fig13.png Graphic file (type png)
 <use images/fig13.png>
 Package pdftex.def Info: images/fig13.png  used on input line 389.
@@ -1033,7 +1033,7 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [12 <./images/fig12.png> <./images/fig13.png>]
-<images/fig14.png, id=341, 367.3725pt x 397.485pt>
+<images/fig14.png, id=348, 367.3725pt x 397.485pt>
 File: images/fig14.png Graphic file (type png)
 <use images/fig14.png>
 Package pdftex.def Info: images/fig14.png  used on input line 409.
@@ -1042,7 +1042,7 @@ File: images/fig14.png Graphic file (type png)
 <use images/fig14.png>
 Package pdftex.def Info: images/fig14.png  used on input line 409.
 (pdftex.def)             Requested size: 146.94638pt x 158.99118pt.
-<images/fig15.png, id=344, 463.7325pt x 395.97937pt>
+<images/fig15.png, id=351, 463.7325pt x 395.97937pt>
 File: images/fig15.png Graphic file (type png)
 <use images/fig15.png>
 Package pdftex.def Info: images/fig15.png  used on input line 417.
@@ -1054,11 +1054,11 @@ Package pdftex.def Info: images/fig15.png  used on input line 417.
 
 
 LaTeX Font Warning: Font shape `T1/formata/m/sl' undefined
-(Font)              using `T1/formata/m/it' instead on input line 428.
+(Font)              using `T1/formata/m/it' instead on input line 433.
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 428.
+Package pdftex.def Info: notaglinelogo.png  used on input line 433.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1078,12 +1078,12 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [13 <./images/fig14.png> <./images/fig15.png>] (./access.bbl
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 93.
+Package pdftex.def Info: notaglinelogo.png  used on input line 50.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 
 LaTeX Font Warning: Font shape `T1/formata/m/sl' undefined
-(Font)              using `T1/formata/m/it' instead on input line 93.
+(Font)              using `T1/formata/m/it' instead on input line 50.
 
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1117,11 +1117,11 @@ Underfull \hbox (badness 1521) in paragraph at lines 199--202
 
 
 LaTeX Font Warning: Font shape `T1/formata/m/sl' undefined
-(Font)              using `T1/formata/m/it' instead on input line 264.
+(Font)              using `T1/formata/m/it' instead on input line 215.
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 264.
+Package pdftex.def Info: notaglinelogo.png  used on input line 215.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1144,59 +1144,59 @@ Underfull \hbox (badness 1748) in paragraph at lines 277--280
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 364--367
+Underfull \hbox (badness 10000) in paragraph at lines 340--343
 \T1/times/n/n/10 https://rumn.medium.com/setting-top-k-top-p-and-
  []
 
 )
-<images/author1.png, id=400, 227.34938pt x 289.83281pt>
+<images/author1.png, id=402, 227.34938pt x 289.83281pt>
 File: images/author1.png Graphic file (type png)
 <use images/author1.png>
-Package pdftex.def Info: images/author1.png  used on input line 446.
+Package pdftex.def Info: images/author1.png  used on input line 449.
 (pdftex.def)             Requested size: 72.27107pt x 90.33813pt.
 File: images/author1.png Graphic file (type png)
 <use images/author1.png>
-Package pdftex.def Info: images/author1.png  used on input line 446.
+Package pdftex.def Info: images/author1.png  used on input line 449.
 (pdftex.def)             Requested size: 72.27107pt x 90.33813pt.
-<images/author2.jpeg, id=403, 830.10126pt x 948.54375pt>
+<images/author2.jpeg, id=405, 830.10126pt x 948.54375pt>
 File: images/author2.jpeg Graphic file (type jpg)
 <use images/author2.jpeg>
-Package pdftex.def Info: images/author2.jpeg  used on input line 451.
+Package pdftex.def Info: images/author2.jpeg  used on input line 454.
 (pdftex.def)             Requested size: 72.26129pt x 82.57184pt.
 File: images/author2.jpeg Graphic file (type jpg)
 <use images/author2.jpeg>
-Package pdftex.def Info: images/author2.jpeg  used on input line 451.
+Package pdftex.def Info: images/author2.jpeg  used on input line 454.
 (pdftex.def)             Requested size: 72.26129pt x 82.57184pt.
 
-Underfull \hbox (badness 2941) in paragraph at lines 451--452
+Underfull \hbox (badness 2941) in paragraph at lines 454--455
 []\T1/formata/m/n/8 HARITH IBRAHIM \T1/times/n/n/8 is cur-rently pur-su-ing an
  []
 
 
-Underfull \hbox (badness 4303) in paragraph at lines 451--452
+Underfull \hbox (badness 4303) in paragraph at lines 454--455
 \T1/times/n/n/8 MEng in-dus-trial de-gree in Mecha-tron-ics and
  []
 
-<images/author3.jpg, id=406, 79.1685pt x 105.4485pt>
+<images/author3.jpg, id=408, 79.1685pt x 105.4485pt>
 File: images/author3.jpg Graphic file (type jpg)
 <use images/author3.jpg>
-Package pdftex.def Info: images/author3.jpg  used on input line 456.
+Package pdftex.def Info: images/author3.jpg  used on input line 459.
 (pdftex.def)             Requested size: 67.82504pt x 90.33961pt.
 File: images/author3.jpg Graphic file (type jpg)
 <use images/author3.jpg>
-Package pdftex.def Info: images/author3.jpg  used on input line 456.
+Package pdftex.def Info: images/author3.jpg  used on input line 459.
 (pdftex.def)             Requested size: 67.82504pt x 90.33961pt.
 File: bullet.png Graphic file (type png)
 <use bullet.png>
-Package pdftex.def Info: bullet.png  used on input line 460.
+Package pdftex.def Info: bullet.png  used on input line 463.
 (pdftex.def)             Requested size: 5.0pt x 14.6871pt.
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 462.
+Package pdftex.def Info: notaglinelogo.png  used on input line 465.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 LaTeX Font Warning: Font shape `T1/formata/m/sl' undefined
-(Font)              using `T1/formata/m/it' instead on input line 462.
+(Font)              using `T1/formata/m/it' instead on input line 465.
 
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1218,23 +1218,23 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `access.out' has not changed.
-(rerunfilecheck)             Checksum: 17B43C34266280FBEF51100A2F2C0D8D;3172.
+(rerunfilecheck)             Checksum: 122E70888BF1DD3DF3D4487002FD51FE;3420.
  ) 
 Here is how much of TeX's memory you used:
- 12239 strings out of 478287
- 194227 string characters out of 5849290
- 508974 words of memory out of 5000000
- 30088 multiletter control sequences out of 15000+600000
+ 12229 strings out of 478287
+ 193705 string characters out of 5849289
+ 508659 words of memory out of 5000000
+ 30079 multiletter control sequences out of 15000+600000
  544073 words of font info for 153 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,14n,76p,2376b,514s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,14n,76p,2221b,498s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{section*.2} has been referenced but does not exist, replaced by a fixed one
 
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb><./t1-formata-bold.pfb><./t1-formata-condmedium.pfb><./t1-formata-medium.pfb><./t1-formata-mediumitalic.pfb><./t1-formata-regular.pfb><./t1-giovannistd-bookitalic.pfb><./t1-times-bold.pfb><./t1-times-italic.pfb><./t1-times.pfb>
-Output written on access.pdf (16 pages, 15777995 bytes).
+Output written on access.pdf (16 pages, 15777795 bytes).
 PDF statistics:
- 493 PDF objects out of 1000 (max. 8388607)
- 406 compressed objects within 5 object streams
- 112 named destinations out of 1000 (max. 500000)
- 302 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 495 PDF objects out of 1000 (max. 8388607)
+ 408 compressed objects within 5 object streams
+ 111 named destinations out of 1000 (max. 500000)
+ 326 words of extra memory for PDF output out of 10000 (max. 10000000)
 
